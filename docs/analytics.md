@@ -28,3 +28,5 @@ An equal-choice German/English notice offers analytics or no analytics. The tag 
 Run npm run check for consent, safe-payload and preview isolation tests. In a live browser, decline first and verify no Google tag is present; open settings and consent, then verify the new stream in GA4 Realtime. Test with non-personal example content; never send an email just to verify tracking. Reports may take time to populate; blockers and consent choices reduce measured traffic.
 
 When a prompt changes useful actions, update this table, instrumentation and appropriate tests in the same change. Refer to [Google event setup](https://developers.google.com/analytics/devguides/collection/ga4/events) and [basic consent mode](https://developers.google.com/tag-platform/security/concepts/consent-mode).
+
+Verified on 13 September 2026: GA4 Realtime displayed the new English page title, select_package and enquiry_prepared after a consented test. No tag was present before consent or after declining. Enhanced measurement was confirmed off in the saved stream settings.
