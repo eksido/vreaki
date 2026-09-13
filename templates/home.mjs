@@ -3,6 +3,7 @@ export function renderHome(site, page, lang, esc) {
   const other = lang === 'de' ? 'en' : 'de';
   const contact = () => '#contact';
   const formText = key => esc(h.form[key].replaceAll('{email}',site.email));
+  const motionButton = extra => `<button class="motion-toggle ${extra}" hidden data-pause="${esc(h.pause)}" data-play="${esc(h.play)}" aria-pressed="false"></button>`;
   const button = (label, href, primary = false) => `<a class="button${primary ? ' primary' : ''}" href="${href}">${esc(label)}<span aria-hidden="true">↗</span></a>`;
   return `
   <a class="skip-link" href="#content">${lang === 'de' ? 'Zum Inhalt' : 'Skip to content'}</a>
@@ -17,7 +18,7 @@ export function renderHome(site, page, lang, esc) {
     <section class="hero" aria-labelledby="hero-title">
       <div class="story-stage">
         <img class="hero-poster" src="${site.poster}" alt="" fetchpriority="high">
-        <video class="hero-video" data-src="${site.video}" poster="${site.poster}" muted loop playsinline preload="none" aria-hidden="true"></video>
+        <video class="hero-video" data-src="${site.video}" data-mobile-src="${site.mobileVideo}" poster="${site.poster}" muted loop playsinline preload="none" aria-hidden="true"></video>
         <div class="shade" aria-hidden="true"></div>
         <div class="hero-copy">
           <p class="eyebrow">${esc(h.hero.label)}</p>
@@ -25,7 +26,7 @@ export function renderHome(site, page, lang, esc) {
           <p class="dek">${esc(h.hero.description)}</p>
           <div class="actions">${button(h.hero.primary,contact(h.hero.primary),true)}${button(h.hero.secondary,'#services')}</div>
         </div>
-        <button class="motion-toggle" hidden data-pause="${esc(h.pause)}" data-play="${esc(h.play)}" aria-pressed="false"></button>
+        ${motionButton('motion-hero')}
         <span class="scroll-cue" aria-hidden="true">↓</span>
       </div>
       <div class="hero-dock">
@@ -33,6 +34,7 @@ export function renderHome(site, page, lang, esc) {
       </div>
     </section>
     <section class="campaign-marquee" aria-label="${esc(h.galleryLabel)}">
+      ${motionButton('motion-gallery')}
       <div class="campaign-track" aria-hidden="true">${[...site.media.gallery,...site.media.gallery].map((image,i)=>`<div class="campaign-frame tint-${i%4}"><img src="${image}" alt="" loading="lazy" width="750" height="1000"><span>${esc(site.wordmark)}</span></div>`).join('')}</div>
     </section>
     <section class="services" id="services" aria-labelledby="services-title">

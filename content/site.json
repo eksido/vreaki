@@ -405,5 +405,6 @@
       "/assets/campaign-3.jpg",
       "/assets/poster.jpg"
     ]
-  }
+  },
+  "mobileVideo": "/assets/background-mobile.mp4"
 }

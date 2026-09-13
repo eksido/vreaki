@@ -1,27 +1,39 @@
 const root = document.documentElement;
 const video = document.querySelector('.hero-video');
 const motion = matchMedia('(prefers-reduced-motion: reduce)');
-const toggle = document.querySelector('.motion-toggle');
+const toggles = [...document.querySelectorAll('.motion-toggle')];
+let heroVisible = true;
 let paused = motion.matches || Boolean(navigator.connection?.saveData);
 function syncMotion() {
   document.body.classList.toggle('motion-paused', paused);
-  toggle.textContent = paused ? toggle.dataset.play : toggle.dataset.pause;
-  toggle.setAttribute('aria-pressed', String(paused));
-  if (paused) video.pause();
+  toggles.forEach(toggle => {
+    toggle.textContent = paused ? toggle.dataset.play : toggle.dataset.pause;
+    toggle.setAttribute('aria-pressed', String(paused));
+  });
+  if (paused || !heroVisible || document.hidden) video.pause();
   else {
     video.style.display = 'block';
-    if (!video.src) video.src = video.dataset.src;
-    video.play().catch(() => { paused = true; syncMotion(); });
+    if (!video.src) video.src = matchMedia('(max-width: 700px)').matches ? video.dataset.mobileSrc : video.dataset.src;
+    video.play().catch(error => {
+      if (error.name !== 'AbortError') { paused = true; syncMotion(); }
+    });
   }
 }
-toggle.hidden = false;
-toggle.addEventListener('click', () => {paused = !paused; syncMotion();});
+toggles.forEach(toggle => {
+  toggle.hidden = false;
+  toggle.addEventListener('click', () => {paused = !paused; syncMotion();});
+});
 motion.addEventListener('change', () => {paused = motion.matches; syncMotion(); setupRail();});
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) video.pause();
-  else if (!paused) video.play().catch(() => {});
+  else if (!paused && heroVisible) syncMotion();
 });
 syncMotion();
+const heroObserver = new IntersectionObserver(entries => {
+  heroVisible = entries[0].isIntersecting;
+  syncMotion();
+}, {threshold: 0});
+heroObserver.observe(document.querySelector('.story-stage'));
 
 const services = document.querySelector('.services');
 const scroller = document.querySelector('.service-scroller');
@@ -50,7 +62,7 @@ function update(){
 }
 function schedule(){if(!frame)frame=requestAnimationFrame(update);}
 function setupRail(){
-  pinned = innerWidth>=1000 && innerHeight>=680 && !motion.matches;
+  pinned = innerWidth>=1000 && innerHeight>=680 && matchMedia('(hover: hover) and (pointer: fine)').matches && !motion.matches;
   services.classList.toggle('is-pinned',pinned);
   services.style.setProperty('--rail-distance',`${maxTravel()}px`);
   schedule();
@@ -75,7 +87,7 @@ scroller.addEventListener('focusin',event=>{
   const card=event.target.closest('.service-card');
   if(card)moveTo(card.offsetLeft-cards[0].offsetLeft);
 });
-window.addEventListener('scroll',schedule,{passive:true});
+window.addEventListener('scroll',()=>{if(pinned)schedule();},{passive:true});
 window.addEventListener('resize',setupRail);
 scroller.addEventListener('scroll',updateCount,{passive:true});
 document.fonts.ready.then(setupRail);

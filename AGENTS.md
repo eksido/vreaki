@@ -49,3 +49,7 @@ The owner approved hello@vreaki.com and starting prices EUR 490 / 990 / 1900. Up
 The owner explicitly chose an email-preparation form with no external service. Package and service buttons preselect the relevant enquiry. The form validates inputs and displays a reviewable draft; the visitor must click Open email app and send from their email client. A copy option supports webmail. Do not describe this as an enquiry already sent, save form input, add analytics for form data, or add an email provider without a request. `node --test scripts/enquiry.test.mjs` tests formatting and validation without sending messages.
 
 Desktop service cards move horizontally as the user scrolls; arrow buttons and keyboard navigation work too. Mobile, short screens, reduced motion and no-JavaScript use native horizontal scrolling. Preserve access to every card in each mode. Motion controls pause autoplay video and the image strip.
+
+## Mobile refinements
+
+Keep primary touch targets at least 44px high, readable form input text at 16px, and service-card snap padding aligned with the visible gutter. The hero uses mobileVideo at widths up to 700px; replace both video encodes when changing source media. The hero video pauses when offscreen. On phones, motion controls belong within the hero and image-strip sections so they never cover form fields. Touch devices use native service scrolling even on larger screens. Check 320px, 375px and 430px widths in both languages, plus desktop, after layout edits.
