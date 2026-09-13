@@ -2,7 +2,7 @@
 
 **Live copy:** https://vreaki.vercel.app · **Repository:** https://github.com/eksido/vreaki · **Vercel project:** https://vercel.com/eksidos-projects/vreaki
 
-A copy of the German and English pages at https://vreaki.com, captured September 13, 2026. The original blue header, thin Poppins typography, background video, text and links are preserved. Local assets remove the WordPress dependency. Accessible video controls and a still-image fallback are added.
+A bilingual Vreaki site following the owner's updated HTML design and McDonald’s Spain's campaign-led feel: full-screen video, bold Carrois Gothic typography, overlapping feature cards, animated image strip, service carousel, package pricing and an enquiry form. All media is hosted locally.
 
 ## Start here — no coding needed
 
@@ -30,8 +30,10 @@ Examples:
 | --- | --- |
 | `content/site.json` | All text, business details, languages, colors, media and metadata |
 | `public/styles.css` | Layout and responsive styling |
-| `public/video.js` | Video controls and reduced-motion behavior |
+| `public/site.js` | Motion, carousel, package selection and form behavior |
 | `public/assets/` | Video, images and fonts |
+| `templates/home.mjs` | Semantic homepage sections |
+| `public/enquiry.js` | Email draft formatting |
 | `scripts/build.mjs` | Generates complete static pages and search files |
 | `scripts/check.mjs` | Checks routes, assets, metadata and indexing consistency |
 | `AGENTS.md` | Permanent instructions for Codex |
@@ -64,3 +66,15 @@ For direct CLI publishing: `npm run deploy`. If prompted, sign in and link to th
 ## Source assets
 
 Original video and Poppins fonts were copied from the assets served by vreaki.com / vreaki.eksido.io. The poster and social card are frames from that video. This repository does not grant rights to reuse the brand's media for unrelated projects. Poppins is distributed under the SIL Open Font License; see `public/assets/OFL.txt`.
+
+## Updating this design
+
+Each language has a `home` object in `content/site.json`: hero, dock cards, six services, three packages, navigation and form labels. Say “Change the Campaign Content Set price to …” or “Add this service and keep mobile navigation working.” Codex updates both languages and the generated AI-readable summary. The agreed contact is hello@vreaki.com. Starting prices are EUR 490 / 990 / 1900.
+
+### Enquiry form
+
+Choosing a service or package preselects it in the form. Visitors fill in their name, email and brief, then prepare and review an email. They must open their email app and send it themselves, or copy the text into webmail. No submission is sent automatically, no data is stored by this site, and no email service is needed. The page explains this before submission.
+
+### Reference and accessibility
+
+The supplied HTML referenced two media files that were not attached. This version uses the existing Vreaki video and extracted stills. It removes inactive overlapping CSS revisions, restores a visible H1, keeps mobile navigation available, and provides pause controls, keyboard-accessible cards and reduced-motion/native-scroll fallbacks. Carrois Gothic uses the SIL Open Font License in public/assets/Carrois-OFL.txt.

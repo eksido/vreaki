@@ -1,3 +1,4 @@
+import { renderHome } from '../templates/home.mjs';
 import { readFile, writeFile, mkdir, rm, cp } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 export const site = JSON.parse(await readFile('content/site.json', 'utf8'));
@@ -9,7 +10,7 @@ assert.equal(origin.protocol, 'https:', 'canonicalOrigin must use HTTPS');
 assert.equal(origin.origin, site.canonicalOrigin, 'canonicalOrigin must have no path or trailing slash');
 assert.match(site.email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/);
 assert.deepEqual(Object.keys(site.pages).sort(), ['de', 'en']);
-for (const color of ['header', 'background', 'text']) assert.match(site.theme[color], /^#[a-f\d]{6}$/i);
+for (const color of ['header', 'background', 'text', 'blue', 'yellow']) assert.match(site.theme[color], /^#[a-f\d]{6}$/i);
 assert(site.theme.overlay >= 0 && site.theme.overlay <= 1);
 for (const social of site.socials) assert.equal(new URL(social.url).protocol, 'https:');
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -62,31 +63,14 @@ for (const [lang, page] of Object.entries(site.pages)) {
   <meta name="twitter:image" content="${new URL(site.shareImage, publicOrigin).href}">
   <meta name="theme-color" content="${site.theme.header}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="/assets/poppins-200.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/carrois-gothic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
-  <style>:root{--header:${site.theme.header};--background:${site.theme.background};--text:${site.theme.text};--overlay:${site.theme.overlay}}</style>
+  <style>:root{--header:${site.theme.header};--background:${site.theme.background};--text:${site.theme.text};--overlay:${site.theme.overlay};--blue:${site.theme.blue};--yellow:${site.theme.yellow};--hero-position:${site.media.heroPosition};--poster-image:url('${site.poster}')}</style>
   <script type="application/ld+json">${JSON.stringify(graph).replace(/</g,'\\u003c')}</script>
-  <script src="/video.js" defer></script>
+  <script type="module" src="/site.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#content">${lang === 'de' ? 'Zum Inhalt' : 'Skip to content'}</a>
-  <header class="site-header">
-    <h1>${esc(site.wordmark)}</h1>
-    <a class="language" href="${site.pages[other].path}" lang="${other}" hreflang="${other}" aria-label="${other === 'en' ? 'Switch to English' : 'Auf Deutsch wechseln'}">${other.toUpperCase()}</a>
-  </header>
-  <main id="content" class="hero">
-    <img class="hero-poster" src="${site.poster}" alt="" fetchpriority="high">
-    <video class="hero-video" data-src="${site.video}" poster="${site.poster}" muted loop playsinline preload="none" aria-hidden="true"></video>
-    <div class="shade" aria-hidden="true"></div>
-    <div class="hero-content">
-      ${page.paragraphs.map(p=>`<p class="intro">${esc(p)}</p>`).join('\n      ')}
-      <footer class="contact-links" aria-label="${lang === 'de' ? 'Kontakt' : 'Contact'}">
-        <a href="mailto:${esc(site.email)}">EMAIL</a>
-        ${site.socials.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a>`).join('\n        ')}
-      </footer>
-    </div>
-    <button class="video-toggle" hidden data-pause="${lang === 'de' ? 'Video pausieren' : 'Pause video'}" data-play="${lang === 'de' ? 'Video abspielen' : 'Play video'}"></button>
-  </main>
+  ${renderHome(site, page, lang, esc)}
 </body>
 </html>\n`;
   const dir = `dist${page.path}`;
@@ -95,7 +79,7 @@ for (const [lang, page] of Object.entries(site.pages)) {
 }
 await writeFile('dist/robots.txt', `User-agent: *\n${preview ? 'Disallow: /' : 'Allow: /'}\n\nSitemap: ${absolute('/sitemap.xml')}\n`);
 await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${Object.values(site.pages).map(p=>`\n<url><loc>${absolute(p.path)}</loc><lastmod>${p.updated}</lastmod>${Object.entries(site.pages).map(([l,q])=>`<xhtml:link rel="alternate" hreflang="${l}" href="${absolute(q.path)}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${absolute('/')}"/></url>`).join('')}\n</urlset>\n`);
-await writeFile('dist/llms.txt', `# ${site.name}\n\n> ${site.pages.en.description}\n\n${site.pages.en.paragraphs.join('\n\n')}\n\n## Official pages\n${Object.entries(site.pages).map(([l,p])=>`- [${l.toUpperCase()}](${absolute(p.path)}): ${p.description}`).join('\n')}\n\n## Contact\n- Email: ${site.email}\n${site.socials.map(s=>`- [${s.label}](${s.url})`).join('\n')}\n`);
+await writeFile('dist/llms.txt', `# ${site.name}\n\n> ${site.pages.en.description}\n\n${site.pages.en.paragraphs.join('\n\n')}\n\n## Services\n${site.pages.en.home.services.map(s=>`### ${s.label}\n${s.title}\n${s.description}`).join('\n\n')}\n\n## Packages\n${site.pages.en.home.packages.map(p=>`### ${p.title}\n${p.description}\n${p.features.join('; ')}${site.pricingPublished ? `\nFrom EUR ${p.price}` : '\nRequest a quote.'}`).join('\n\n')}\n\n## Official pages\n${Object.entries(site.pages).map(([l,p])=>`- [${l.toUpperCase()}](${absolute(p.path)}): ${p.description}`).join('\n')}\n\n## Contact\n- Email: ${site.email}\n${site.socials.map(s=>`- [${s.label}](${s.url})`).join('\n')}\n`);
 await writeFile('dist/favicon.svg', `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="${site.theme.header}"/><text x="32" y="46" text-anchor="middle" fill="${site.theme.text}" font-family="sans-serif" font-size="48" font-weight="100">v</text></svg>`);
 await writeFile('dist/404.html', '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="robots" content="noindex"><title>Page not found | Vreaki</title><h1>Page not found</h1><p><a href="/">Vreaki — Home</a></p></html>');
 console.log('Built German and English pages, structured data, social metadata, sitemap, robots.txt and llms.txt.');

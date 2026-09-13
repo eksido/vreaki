@@ -1,13 +1,14 @@
 # Vreaki: instructions for Codex
 
-This is a small bilingual content-lab website. The owner should only need to describe changes in ordinary language. Do the implementation, checks and preview yourself. Read README.md and content/site.json first.
+This is a small bilingual content-lab website. The visual direction is the owner's vreaki-homepage-visual.html, inspired by https://mcdonalds.es/: video hero, bold type, overlapping intro cards, moving image strip, colorful service carousel, and pricing cards. The owner should only need to describe changes in ordinary language. Do the implementation, checks and preview yourself. Read README.md and content/site.json first.
 
 ## Structure
 
 - content/site.json is the source of truth for business details, German and English text, page metadata, media paths and brand colors.
 - scripts/build.mjs generates static HTML, JSON-LD, social tags, hreflang, sitemap.xml, robots.txt, llms.txt, favicon and 404 page.
-- public/styles.css controls responsive presentation; public/video.js is the only browser JS.
+- public/styles.css controls responsive presentation; public/site.js controls motion, the service carousel and enquiry UI. public/enquiry.js formats email drafts.
 - public/assets holds the site's own video, poster and fonts. dist is generated; never edit it.
+- templates/home.mjs renders semantic sections from each page.home object. Keep all editable wording, service lists, package prices and form labels in content/site.json.
 - No runtime dependencies, database, CMS, WordPress, API keys or environment variables are needed. Node 22+ runs the tooling.
 
 ## Every content or layout change
@@ -40,3 +41,11 @@ Repository: https://github.com/eksido/vreaki. Vercel team: eksidos-projects. Pro
 Use the existing Vercel Git integration; push an approved publishing change to main. A branch push creates a preview. If CLI is needed use the pinned command in package.json. First-time setup on a new computer may require `npx vercel@59.16.0 login` and `npx vercel@59.16.0 link --project vreaki --scope eksidos-projects`.
 
 Never commit secrets or .vercel. Do not force-push. To undo a published change, revert its commit and push the revert; verify the new deployment. Avoid changing access permissions or adding integrations for ordinary edits.
+
+## Enquiries and pricing
+
+The owner approved hello@vreaki.com and starting prices EUR 490 / 990 / 1900. Update both languages together. pricingPublished controls whether draft prices appear. Do not invent VAT, billing intervals, payment terms or delivery promises.
+
+The owner explicitly chose an email-preparation form with no external service. Package and service buttons preselect the relevant enquiry. The form validates inputs and displays a reviewable draft; the visitor must click Open email app and send from their email client. A copy option supports webmail. Do not describe this as an enquiry already sent, save form input, add analytics for form data, or add an email provider without a request. `node --test scripts/enquiry.test.mjs` tests formatting and validation without sending messages.
+
+Desktop service cards move horizontally as the user scrolls; arrow buttons and keyboard navigation work too. Mobile, short screens, reduced motion and no-JavaScript use native horizontal scrolling. Preserve access to every card in each mode. Motion controls pause autoplay video and the image strip.

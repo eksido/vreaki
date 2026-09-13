@@ -2,7 +2,7 @@
   "name": "Vreaki",
   "wordmark": "vreaki",
   "canonicalOrigin": "https://vreaki.com",
-  "email": "vreaki.studio@gmail.com",
+  "email": "hello@vreaki.com",
   "location": "Barcelona",
   "socials": [
     {
@@ -18,32 +18,392 @@
   "poster": "/assets/poster.jpg",
   "shareImage": "/assets/share.jpg",
   "theme": {
-    "header": "#245677",
-    "background": "#3f7fa9",
-    "text": "#ffffff",
-    "overlay": 0.3
+    "header": "#05080a",
+    "background": "#f7f4ed",
+    "text": "#05080a",
+    "overlay": 0.42,
+    "blue": "#0b63d8",
+    "yellow": "#ffc423"
   },
   "pages": {
     "de": {
       "path": "/",
       "title": "Vreaki | KI-basiertes Content Lab in Barcelona",
-      "description": "Vreaki ist ein AI-basiertes Content Lab in Barcelona für Kampagnen, Social Content, Editorial Visuals und digitale Assets.",
+      "description": "Vreaki gestaltet AI-Visuals für Social Media, E-Commerce, Beauty, Fashion und Hospitality. Entdecke die Pakete unseres Content Labs in Barcelona.",
       "paragraphs": [
         "Vreaki ist ein AI-basiertes Content Lab mit Sitz in Barcelona. Wir verbinden Ästhetik, Technologie und klare Markenvision, um Kampagnen, Social Content, Editorial Visuals und digitale Assets schnell, hochwertig und zukunftsorientiert zu produzieren.",
         "Unsere Workflows verbinden Effizienz, Qualität und Vision. Damit schaffen wir Bildwelten, die konsistent, markentreu und sofort einsatzbereit sind. Für Anfragen zu Projekten oder Kollaborationen kontaktiere uns gerne per E-Mail."
       ],
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "home": {
+        "tagline": "Wir bringen Bilder in Bewegung",
+        "hero": {
+          "label": "AI Content Lab · Barcelona",
+          "title": "Ein Poster wird lebendig.",
+          "description": "Von einem Bild zu einer lebendigen Markenwelt.",
+          "primary": "Kampagne starten",
+          "secondary": "Leistungen ansehen"
+        },
+        "nav": {
+          "services": "Leistungen",
+          "packages": "Pakete",
+          "contact": "Kontakt"
+        },
+        "dock": [
+          {
+            "label": "Content-Kampagne",
+            "title": "Eine visuelle Richtung für jedes Asset."
+          },
+          {
+            "label": "Für deinen Vertrieb",
+            "title": "Social Media, Produktseiten und Hospitality-Kampagnen."
+          }
+        ],
+        "servicesTitle": "Eine Idee. Jedes Format.",
+        "servicesLabel": "Was wir gestalten",
+        "serviceHint": "Scrollen und entdecken",
+        "services": [
+          {
+            "id": "social-content",
+            "label": "Social Media",
+            "title": "AI-Content für Posts, Ads und Reels.",
+            "description": "Kampagnenbilder, Reel-Cover, Werbemotive und Feed-Assets mit einem wiedererkennbaren Markenlook.",
+            "tags": [
+              "Reel-Cover",
+              "Werbemotive",
+              "Feed-Sets",
+              "Story-Visuals"
+            ]
+          },
+          {
+            "id": "listing-content",
+            "label": "E-Commerce",
+            "title": "Visuals für Amazon und Produktseiten.",
+            "description": "Lifestyle-Szenen, Feature-Bilder und Produkte im Einsatz für Shops, Marktplätze und Launch-Seiten.",
+            "tags": [
+              "Hauptbild",
+              "Lifestyle",
+              "Produktvorteile",
+              "Launch-Seite"
+            ]
+          },
+          {
+            "id": "skincare-content",
+            "label": "Skincare und Beauty",
+            "title": "Produktwelten für Beauty-Marken.",
+            "description": "Klare Produktszenen, ausdrucksstarke Texturen, Pflege-Routinen und hochwertige Launch-Bilder für Skincare und Kosmetik.",
+            "tags": [
+              "Texturen",
+              "Pflege-Routinen",
+              "Launch-Visuals",
+              "Detailaufnahmen"
+            ]
+          },
+          {
+            "id": "fashion-content",
+            "label": "Swimwear und Fashion",
+            "title": "Kampagnenbilder für saisonale Drops.",
+            "description": "AI-Visuals mit Editorial-Look für Swimwear, Resortwear, Lookbooks, Launch-Teaser und Social-Kampagnen.",
+            "tags": [
+              "Lookbook",
+              "Drop-Teaser",
+              "Editorial-Ads",
+              "Shop-Banner"
+            ]
+          },
+          {
+            "id": "hospitality-content",
+            "label": "Hospitality",
+            "title": "Hotels, Beachclubs und Destinationen.",
+            "description": "Atmosphärische Visuals für Eröffnungen, Events, Restaurants, Beachclubs, saisonale Angebote und Buchungskampagnen.",
+            "tags": [
+              "Eröffnung",
+              "Event-Assets",
+              "Saisonangebote",
+              "Booking-Ads"
+            ]
+          },
+          {
+            "id": "ongoing-content",
+            "label": "Laufender Content",
+            "title": "Monatlicher Content. Ein Markenlook.",
+            "description": "Für Marken, die regelmäßig neue AI-Visuals brauchen, ohne jede Woche von vorn anzufangen.",
+            "tags": [
+              "Content-Plan",
+              "Visuelles System",
+              "Monatliche Sets",
+              "Schnelle Varianten"
+            ]
+          }
+        ],
+        "packagesTitle": "Der passende Impuls für deinen Content.",
+        "packagesDescription": "Einfache Pakete für Marken, die konsistente AI-Visuals brauchen – ohne eine komplette Produktion von Grund auf aufzubauen.",
+        "packages": [
+          {
+            "label": "Starter",
+            "title": "Social Content Set",
+            "price": 490,
+            "description": "Für ein Produkt, einen Ort oder eine Kampagnenidee mit einer ersten ausgearbeiteten visuellen Richtung.",
+            "features": [
+              "6 AI-Bildkonzepte",
+              "1 visuelle Richtung",
+              "Feed- und Story-Zuschnitte"
+            ],
+            "cta": "Paket anfragen",
+            "featured": false
+          },
+          {
+            "label": "Für deinen Launch",
+            "title": "Campaign Content Set",
+            "price": 990,
+            "description": "Für Marken, die ein stärkeres Set für Social Media, Kampagnenbilder und Produktszenen brauchen.",
+            "features": [
+              "15 AI-Kampagnenbilder",
+              "Social- und Ad-Varianten",
+              "Produkt- oder Location-Szenen"
+            ],
+            "cta": "Kampagne starten",
+            "featured": true
+          },
+          {
+            "label": "Laufend",
+            "title": "Monthly Content Flow",
+            "price": 1900,
+            "description": "Für Marken, Hotels oder Beachclubs, die jeden Monat einen konsistenten visuellen Rhythmus brauchen.",
+            "features": [
+              "30+ AI-Content-Assets",
+              "Monatliches Kampagnenthema",
+              "Wiederverwendbare visuelle Richtung"
+            ],
+            "cta": "Monat planen",
+            "featured": false
+          }
+        ],
+        "quote": "Angebot anfragen",
+        "from": "ab",
+        "contactTitle": "Lass uns deine nächste Markenwelt gestalten.",
+        "contactLabel": "Schon eine Idee?",
+        "pause": "Bewegung pausieren",
+        "play": "Bewegung starten",
+        "previous": "Vorherige Leistung",
+        "next": "Nächste Leistung",
+        "galleryLabel": "Eine Kampagne, neue Perspektiven",
+        "backTop": "Nach oben",
+        "form": {
+          "title": "Erzähl uns von deiner Idee.",
+          "name": "Dein Name",
+          "email": "Deine E-Mail",
+          "brand": "Marke oder Website (optional)",
+          "package": "Interesse an",
+          "unsure": "Gemeinsam das passende Paket finden",
+          "message": "Was möchtest du gestalten?",
+          "submit": "Anfrage vorbereiten",
+          "note": "Das Formular bereitet eine E-Mail an {email} vor. Du prüfst und sendest sie in deinem E-Mail-Programm. Hier wird nichts abgeschickt oder gespeichert.",
+          "ready": "Deine Anfrage ist bereit zur Prüfung.",
+          "open": "E-Mail-Programm öffnen",
+          "copy": "Anfrage kopieren",
+          "copied": "Kopiert. Füge den Text in eine E-Mail an {email} ein.",
+          "copyError": "Bitte markiere und kopiere den Anfragetext unten.",
+          "draft": "E-Mail-Vorschau",
+          "subject": "Vreaki Anfrage",
+          "nameRequired": "Bitte gib deinen Namen ein."
+        }
+      }
     },
     "en": {
       "path": "/en/",
       "title": "Vreaki | AI Content Lab Barcelona",
-      "description": "Vreaki is an AI-driven content lab in Barcelona creating campaigns, social content, editorial visuals, and digital assets.",
+      "description": "Vreaki creates AI visuals for social media, e-commerce, beauty, fashion and hospitality. Explore campaign packages from our Barcelona content lab.",
       "paragraphs": [
         "VREAKI is an AI-driven content lab based in Barcelona. We merge aesthetics, technology, and clear brand vision to create campaigns, social content, editorial visuals, and digital assets that are produced quickly, with high quality, and with a forward-thinking approach.",
         "Our workflows combine efficiency, quality, and vision. This enables us to create visual worlds that are consistent, on brand, and ready for immediate use. For project inquiries or collaborations, feel free to contact us via email."
       ],
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "home": {
+        "tagline": "We make images move",
+        "hero": {
+          "label": "AI content lab · Barcelona",
+          "title": "A poster comes to life.",
+          "description": "Scrollytelling from one image to a living brand world.",
+          "primary": "Start a campaign",
+          "secondary": "See services"
+        },
+        "nav": {
+          "services": "Services",
+          "packages": "Packages",
+          "contact": "Contact"
+        },
+        "dock": [
+          {
+            "label": "Content campaign",
+            "title": "One visual direction across every asset."
+          },
+          {
+            "label": "Built for sales",
+            "title": "Social media, listings and hospitality campaigns."
+          }
+        ],
+        "servicesTitle": "One idea. Every format.",
+        "servicesLabel": "What we make",
+        "serviceHint": "Scroll to explore",
+        "services": [
+          {
+            "id": "social-content",
+            "label": "Social media",
+            "title": "AI content for posts, ads and reels.",
+            "description": "Campaign visuals, reel covers, ad creatives and feed assets that keep one recognizable brand look.",
+            "tags": [
+              "Reel covers",
+              "Ad creatives",
+              "Feed sets",
+              "Story visuals"
+            ]
+          },
+          {
+            "id": "listing-content",
+            "label": "E-commerce",
+            "title": "Amazon and product listing visuals.",
+            "description": "Lifestyle scenes, feature images and product-in-use visuals for shops, marketplaces and launch pages.",
+            "tags": [
+              "Main image",
+              "Lifestyle",
+              "Benefits",
+              "Launch page"
+            ]
+          },
+          {
+            "id": "skincare-content",
+            "label": "Skincare and beauty",
+            "title": "Product worlds for beauty brands.",
+            "description": "Clean product scenes, texture-led visuals, routine moments and premium launch images for skincare and cosmetics.",
+            "tags": [
+              "Texture shots",
+              "Routine scenes",
+              "Launch visuals",
+              "Detail crops"
+            ]
+          },
+          {
+            "id": "fashion-content",
+            "label": "Swimwear and fashion",
+            "title": "Campaign imagery for seasonal drops.",
+            "description": "Editorial-looking AI visuals for swimwear, resortwear, lookbooks, launch teasers and social campaigns.",
+            "tags": [
+              "Lookbook",
+              "Drop teasers",
+              "Editorial ads",
+              "Shop banners"
+            ]
+          },
+          {
+            "id": "hospitality-content",
+            "label": "Hospitality",
+            "title": "Hotels, beach clubs and destinations.",
+            "description": "Atmospheric visuals for openings, events, restaurants, beach clubs, seasonal offers and booking-focused campaigns.",
+            "tags": [
+              "Opening campaign",
+              "Event assets",
+              "Season offers",
+              "Booking ads"
+            ]
+          },
+          {
+            "id": "ongoing-content",
+            "label": "Ongoing content",
+            "title": "Monthly content flow for one brand look.",
+            "description": "For brands that need a recurring stream of AI visuals without starting from zero every week.",
+            "tags": [
+              "Content plan",
+              "Visual system",
+              "Monthly sets",
+              "Fast variants"
+            ]
+          }
+        ],
+        "packagesTitle": "Choose the content push you need.",
+        "packagesDescription": "Simple packages for brands that need consistent AI visuals without building a full production from scratch.",
+        "packages": [
+          {
+            "label": "Starter",
+            "title": "Social Content Set",
+            "price": 490,
+            "description": "For one product, place or campaign idea that needs a first polished content direction.",
+            "features": [
+              "6 AI visual concepts",
+              "1 visual direction",
+              "Feed and story crops"
+            ],
+            "cta": "Request package",
+            "featured": false
+          },
+          {
+            "label": "Best for launch",
+            "title": "Campaign Content Set",
+            "price": 990,
+            "description": "For brands that need a stronger set across social, campaign images and listing-ready scenes.",
+            "features": [
+              "15 AI campaign visuals",
+              "Social and ad variations",
+              "Product or location scenes"
+            ],
+            "cta": "Start campaign",
+            "featured": true
+          },
+          {
+            "label": "Ongoing",
+            "title": "Monthly Content Flow",
+            "price": 1900,
+            "description": "For brands, hotels or beach clubs that need a consistent visual rhythm every month.",
+            "features": [
+              "30+ AI content assets",
+              "Monthly campaign theme",
+              "Reusable visual direction"
+            ],
+            "cta": "Plan month",
+            "featured": false
+          }
+        ],
+        "quote": "Request a quote",
+        "from": "from",
+        "contactTitle": "Let’s build your next brand world.",
+        "contactLabel": "Have something in mind?",
+        "pause": "Pause motion",
+        "play": "Play motion",
+        "previous": "Previous service",
+        "next": "Next service",
+        "galleryLabel": "One campaign, different perspectives",
+        "backTop": "Back to top",
+        "form": {
+          "title": "Tell us what you have in mind.",
+          "name": "Your name",
+          "email": "Your email",
+          "brand": "Brand or website (optional)",
+          "package": "Interested in",
+          "unsure": "Let’s find the right fit",
+          "message": "What would you like to create?",
+          "submit": "Prepare enquiry",
+          "note": "This form prepares an email to {email}. You review and send it from your email app. Nothing is submitted or stored here.",
+          "ready": "Your enquiry is ready to review.",
+          "open": "Open email app",
+          "copy": "Copy enquiry",
+          "copied": "Copied. Paste it into an email to {email}.",
+          "copyError": "Please select and copy the enquiry text below.",
+          "draft": "Email preview",
+          "subject": "Vreaki enquiry",
+          "nameRequired": "Please enter your name."
+        }
+      }
     }
   },
-  "publicOrigin": "https://vreaki.vercel.app"
+  "publicOrigin": "https://vreaki.vercel.app",
+  "pricingPublished": true,
+  "media": {
+    "heroPosition": "55% 33%",
+    "gallery": [
+      "/assets/poster.jpg",
+      "/assets/campaign-2.jpg",
+      "/assets/campaign-3.jpg",
+      "/assets/poster.jpg"
+    ]
+  }
 }
