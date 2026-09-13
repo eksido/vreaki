@@ -9,7 +9,7 @@ export function renderHome(site, page, lang, esc) {
   return `
   <a class="skip-link" href="#content">${lang === 'de' ? 'Zum Inhalt' : 'Skip to content'}</a>
   <header class="site-header" id="top">
-    <a class="brand" href="${page.path}"><span>${esc(site.wordmark)}</span><small>${esc(h.tagline)}</small></a>
+    <a class="brand" href="${page.path}"><span>${esc(site.wordmark)}</span><small>${esc(h.hero.label)}</small></a>
     <nav aria-label="${lang === 'de' ? 'Hauptnavigation' : 'Main navigation'}">
       <a href="#services">${esc(h.nav.work)}</a><a href="#services">${esc(h.nav.services)}</a><a href="#about">${esc(h.nav.about)}</a><a href="#contact">${esc(h.nav.contact)}</a>
       <a class="language" href="${site.pages[other].path}" lang="${other}" hreflang="${other}" aria-label="${other === 'en' ? 'Switch to English' : 'Auf Deutsch wechseln'}">${other.toUpperCase()}</a>
@@ -32,7 +32,7 @@ export function renderHome(site, page, lang, esc) {
         <span class="scroll-cue" aria-hidden="true">↓</span>
       </div>
       <div class="hero-dock">
-        ${h.dock.map((d,i)=>`<a class="dock-card dock-${i}" href="${i ? '#packages' : '#services'}"><span class="eyebrow">${esc(d.label)}</span><h2>${esc(d.title)}</h2><span class="card-arrow" aria-hidden="true">↗</span></a>`).join('')}
+        ${h.dock.map((d,i)=>`<a class="dock-card dock-${i}" href="${i ? '#packages' : '#services'}"><span class="eyebrow">${esc(d.label)}</span><h2>${esc(d.title)}</h2>${d.description ? `<p>${esc(d.description)}</p>` : ''}<span class="card-arrow" aria-hidden="true">↗</span></a>`).join('')}
       </div>
     </section>
     <section class="campaign-marquee" aria-label="${esc(h.galleryLabel)}">

@@ -53,12 +53,14 @@
         },
         "dock": [
           {
-            "label": "Content-Kampagne",
-            "title": "Eine visuelle Richtung für jedes Asset."
+            "label": "Creative Direction",
+            "title": "Von der Idee zur visuellen Richtung.",
+            "description": "Wir entwickeln Bildsprache, Kampagnenideen und Looks für deine Marke."
           },
           {
-            "label": "Für deinen Vertrieb",
-            "title": "Social Media, Produktseiten und Hospitality-Kampagnen."
+            "label": "Content Production",
+            "title": "Von der visuellen Richtung zum fertigen Content.",
+            "description": "Stills, Motion und Kampagnen-Assets – produziert für jeden relevanten Kanal."
           }
         ],
         "servicesTitle": "Eine Idee. Jedes Format.",
@@ -247,12 +249,14 @@
         },
         "dock": [
           {
-            "label": "Content campaign",
-            "title": "One visual direction across every asset."
+            "label": "Creative direction",
+            "title": "From idea to visual direction.",
+            "description": "We develop visual language, campaign ideas and looks for your brand."
           },
           {
-            "label": "Built for sales",
-            "title": "Social media, listings and hospitality campaigns."
+            "label": "Content production",
+            "title": "From visual direction to finished content.",
+            "description": "Stills, motion and campaign assets – produced for every relevant channel."
           }
         ],
         "servicesTitle": "One idea. Every format.",
