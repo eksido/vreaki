@@ -14,9 +14,9 @@
       "url": "https://www.linkedin.com/company/vreaki-contant-lab"
     }
   ],
-  "video": "/assets/background.mp4",
-  "poster": "/assets/poster.jpg",
-  "shareImage": "/assets/share.jpg",
+  "video": "/assets/background-20260913.mp4",
+  "poster": "/assets/poster-20260913.jpg",
+  "shareImage": "/assets/share-20260913.jpg",
   "theme": {
     "header": "#05080a",
     "background": "#f7f4ed",
@@ -416,13 +416,13 @@
   "media": {
     "heroPosition": "55% 33%",
     "gallery": [
-      "/assets/poster.jpg",
+      "/assets/poster-20260913.jpg",
       "/assets/campaign-2.jpg",
       "/assets/campaign-3.jpg",
-      "/assets/poster.jpg"
+      "/assets/poster-20260913.jpg"
     ]
   },
-  "mobileVideo": "/assets/background-mobile.mp4",
+  "mobileVideo": "/assets/background-mobile-20260913.mp4",
   "analytics": {
     "measurementId": "G-C4XNGFQC50",
     "propertyId": "510036688",
