@@ -5,14 +5,16 @@ export function renderHome(site, page, lang, esc) {
   const formText = key => esc(h.form[key].replaceAll('{email}',site.email));
   const motionButton = extra => `<button class="motion-toggle ${extra}" hidden data-pause="${esc(h.pause)}" data-play="${esc(h.play)}" aria-pressed="false"></button>`;
   const button = (label, href, primary = false) => `<a class="button${primary ? ' primary' : ''}" href="${href}">${esc(label)}<span aria-hidden="true">↗</span></a>`;
+  const heroTitle = h.hero.title.split('\n').map(line => `<span>${esc(line)}</span>`).join('');
   return `
   <a class="skip-link" href="#content">${lang === 'de' ? 'Zum Inhalt' : 'Skip to content'}</a>
   <header class="site-header" id="top">
     <a class="brand" href="${page.path}"><span>${esc(site.wordmark)}</span><small>${esc(h.tagline)}</small></a>
     <nav aria-label="${lang === 'de' ? 'Hauptnavigation' : 'Main navigation'}">
-      <a href="#services">${esc(h.nav.services)}</a><a href="#packages">${esc(h.nav.packages)}</a><a href="#contact">${esc(h.nav.contact)}</a>
+      <a href="#services">${esc(h.nav.work)}</a><a href="#services">${esc(h.nav.services)}</a><a href="#about">${esc(h.nav.about)}</a><a href="#contact">${esc(h.nav.contact)}</a>
       <a class="language" href="${site.pages[other].path}" lang="${other}" hreflang="${other}" aria-label="${other === 'en' ? 'Switch to English' : 'Auf Deutsch wechseln'}">${other.toUpperCase()}</a>
     </nav>
+    <a class="header-cta" href="#contact">${esc(h.hero.primary)} <span aria-hidden="true">↗</span></a>
   </header>
   <main id="content">
     <section class="hero" aria-labelledby="hero-title">
@@ -22,7 +24,7 @@ export function renderHome(site, page, lang, esc) {
         <div class="shade" aria-hidden="true"></div>
         <div class="hero-copy">
           <p class="eyebrow">${esc(h.hero.label)}</p>
-          <h1 id="hero-title">${esc(h.hero.title)}</h1>
+          <h1 id="hero-title">${heroTitle}</h1>
           <p class="dek">${esc(h.hero.description)}</p>
           <div class="actions">${button(h.hero.primary,contact(h.hero.primary),true)}${button(h.hero.secondary,'#services')}</div>
         </div>
@@ -56,7 +58,7 @@ export function renderHome(site, page, lang, esc) {
       <div class="pricing-head"><div><p class="eyebrow">${esc(h.nav.packages)}</p><h2 id="packages-title">${esc(h.packagesTitle)}</h2></div><p>${esc(h.packagesDescription)}</p></div>
       <div class="pricing-grid">${h.packages.map((p,i)=>`<article class="price-card${p.featured ? ' featured' : ''}"><span class="eyebrow">${esc(p.label)}</span><h3>${esc(p.title)}</h3><div class="price">${site.pricingPublished ? `<small>${esc(h.from)}</small> ${new Intl.NumberFormat(lang,{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(p.price)}` : esc(h.quote)}</div><p>${esc(p.description)}</p><ul>${p.features.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>${button(p.cta,contact(p.title)).replace('<a ',`<a data-analytics-item="package-${i+1}" data-enquiry="${esc(p.title)}" `)}</article>`).join('')}</div>
     </section>
-    <section class="about" aria-label="${esc(site.name)} — ${site.location}"><p class="eyebrow">${esc(site.name)} · ${site.location}</p><div>${page.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</div></section>
+    <section class="about" id="about" aria-label="${esc(site.name)} — ${site.location}"><p class="eyebrow">${esc(site.name)} · ${site.location}</p><div>${page.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</div></section>
   </main>
   <footer id="contact" class="site-footer"><p class="eyebrow">${esc(h.contactLabel)}</p><h2>${esc(h.contactTitle)}</h2><a class="email-link" href="mailto:${esc(site.email)}">${esc(site.email)} <span aria-hidden="true">↗</span></a>
     <form action="mailto:${esc(site.email)}" method="post" enctype="text/plain" class="enquiry-form" data-recipient="${esc(site.email)}" data-subject="${esc(h.form.subject)}" data-copied="${formText('copied')}" data-copy-error="${esc(h.form.copyError)}" >
