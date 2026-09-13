@@ -2,6 +2,9 @@ import { readFile, writeFile, mkdir, rm, cp } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 export const site = JSON.parse(await readFile('content/site.json', 'utf8'));
 const origin = new URL(site.canonicalOrigin);
+const publicOrigin = new URL(site.publicOrigin);
+assert.equal(publicOrigin.protocol, 'https:', 'publicOrigin must use HTTPS');
+assert.equal(publicOrigin.origin, site.publicOrigin, 'publicOrigin must have no path or trailing slash');
 assert.equal(origin.protocol, 'https:', 'canonicalOrigin must use HTTPS');
 assert.equal(origin.origin, site.canonicalOrigin, 'canonicalOrigin must have no path or trailing slash');
 assert.match(site.email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/);
@@ -49,14 +52,14 @@ for (const [lang, page] of Object.entries(site.pages)) {
   <meta property="og:description" content="${esc(page.description)}">
   <meta property="og:url" content="${url}">
   <meta property="og:locale" content="${lang === 'de' ? 'de_DE' : 'en_GB'}">
-  <meta property="og:image" content="${absolute(site.shareImage)}">
+  <meta property="og:image" content="${new URL(site.shareImage, publicOrigin).href}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="${esc(site.name)} – AI Content Lab Barcelona">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(page.title)}">
   <meta name="twitter:description" content="${esc(page.description)}">
-  <meta name="twitter:image" content="${absolute(site.shareImage)}">
+  <meta name="twitter:image" content="${new URL(site.shareImage, publicOrigin).href}">
   <meta name="theme-color" content="${site.theme.header}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/poppins-200.woff2" as="font" type="font/woff2" crossorigin>

@@ -51,7 +51,7 @@ Every build generates titles, descriptions, canonical links, German/English lang
 
 The build catches technical omissions and inconsistencies; Codex instructions require semantic review whenever content changes. These measures do not guarantee rankings or AI citations, and no system can promise permanent correctness as search platforms evolve. No recurring external monitoring has been configured.
 
-The Vercel copy retains **https://vreaki.com as the canonical origin** to avoid competing with the original. DNS is not changed. If this deployment becomes the primary site, connect the chosen domain and change `canonicalOrigin` once; all search URLs update on build. Until the original domain is served by this project, its current WordPress SEO is unaffected by edits here.
+The Vercel copy retains **https://vreaki.com as the canonical origin** to avoid competing with the original. `publicOrigin` is the live Vercel address, so social images resolve on the actual deployment. DNS is not changed. If this deployment becomes the primary site, connect the chosen domain and set `canonicalOrigin` and `publicOrigin` to that domain; all metadata URLs update on build. Until the original domain is served by this project, its current WordPress SEO is unaffected by edits here.
 
 ## Deploy
 

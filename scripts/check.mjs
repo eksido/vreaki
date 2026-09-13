@@ -11,6 +11,8 @@ for (const [lang,page] of Object.entries(site.pages)) {
   assert(html.includes(`<html lang="${lang}">`));
   assert.equal((html.match(/<h1[ >]/g)||[]).length,1,'Each page needs exactly one H1');
   assert(html.includes(`<link rel="canonical" href="${url}">`));
+  assert(html.includes(`<meta property="og:image" content="${site.publicOrigin+site.shareImage}">`));
+  assert(html.includes(`<meta name="twitter:image" content="${site.publicOrigin+site.shareImage}">`));
   assert(html.includes(preview ? 'noindex, follow' : 'index, follow, max-image-preview:large'));
   for (const [l,p] of Object.entries(site.pages)) assert(html.includes(`hreflang="${l}" href="${site.canonicalOrigin+p.path}"`));
   const schema = JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
