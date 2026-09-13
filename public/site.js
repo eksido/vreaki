@@ -29,6 +29,9 @@ document.addEventListener('visibilitychange', () => {
   if (document.hidden) video.pause();
   else if (!paused && heroVisible) syncMotion();
 });
+video.addEventListener('canplay', () => {
+  if (!paused && heroVisible && !document.hidden && video.paused) syncMotion();
+});
 syncMotion();
 const heroObserver = new IntersectionObserver(entries => {
   heroVisible = entries[0].isIntersecting;

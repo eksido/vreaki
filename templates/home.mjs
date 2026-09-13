@@ -18,7 +18,7 @@ export function renderHome(site, page, lang, esc) {
     <section class="hero" aria-labelledby="hero-title">
       <div class="story-stage">
         <img class="hero-poster" src="${site.poster}" alt="" fetchpriority="high">
-        <video class="hero-video" data-src="${site.video}" data-mobile-src="${site.mobileVideo}" poster="${site.poster}" muted loop playsinline preload="none" aria-hidden="true"></video>
+        <video class="hero-video" data-src="${site.video}" data-mobile-src="${site.mobileVideo}" poster="${site.poster}" muted loop playsinline autoplay preload="none" aria-hidden="true"></video>
         <div class="shade" aria-hidden="true"></div>
         <div class="hero-copy">
           <p class="eyebrow">${esc(h.hero.label)}</p>

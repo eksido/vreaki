@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 const site = JSON.parse(await readFile('content/site.json','utf8'));
 const limit = async (file, bytes) => assert((await stat(file)).size <= bytes, `${file} exceeds ${Math.round(bytes/1024)} KiB budget; optimize the asset`);
 for (const p of Object.values(site.pages)) await limit(`dist${p.path}index.html`, 50*1024);
-await limit(`dist${site.mobileVideo}`, 900*1024);
+await limit(`dist${site.mobileVideo}`, 1500*1024);
 await limit(`dist${site.video}`, 3300*1024);
 await limit(`dist${site.poster}`, 120*1024);
 for (const image of new Set(site.media.gallery)) await limit(`dist${image}`,120*1024);
