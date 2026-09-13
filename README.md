@@ -1,5 +1,7 @@
 # Vreaki — edit by prompting Codex
 
+**Live copy:** https://vreaki.vercel.app · **Repository:** https://github.com/eksido/vreaki · **Vercel project:** https://vercel.com/eksidos-projects/vreaki
+
 A copy of the German and English pages at https://vreaki.com, captured September 13, 2026. The original blue header, thin Poppins typography, background video, text and links are preserved. Local assets remove the WordPress dependency. Accessible video controls and a still-image fallback are added.
 
 ## Start here — no coding needed
