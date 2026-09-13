@@ -78,3 +78,9 @@ Choosing a service or package preselects it in the form. Visitors fill in their 
 ### Reference and accessibility
 
 The supplied HTML referenced two media files that were not attached. This version uses the existing Vreaki video and extracted stills. It removes inactive overlapping CSS revisions, restores a visible H1, keeps mobile navigation available, and provides pause controls, keyboard-accessible cards and reduced-motion/native-scroll fallbacks. Carrois Gothic uses the SIL Open Font License in public/assets/Carrois-OFL.txt.
+
+## Analytics, mobile and PageSpeed
+
+GA4 is connected to the existing Vreaki property through a dedicated Vercel stream. Useful enquiry and offer-selection events are consent-controlled; form contents are never collected. See [event definitions and property link](docs/analytics.md). No analytics account setup is needed for ordinary edits.
+
+AGENTS.md requires Codex to consider useful measurement, mobile usability and speed for every update. The build enforces asset-size budgets. For a repeatable Lighthouse check of both languages on phones and desktop, start npm run dev, then run npm run audit. To check the live site, use npm run audit -- https://vreaki.vercel.app. Reports go into ignored test-results/. Chrome and first-run access to npm are required for audits; the deployed site has no runtime package dependencies. Scores vary with environment, so compare like-for-like and inspect real-user Core Web Vitals when enough traffic exists.

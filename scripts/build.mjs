@@ -15,6 +15,7 @@ assert(site.theme.overlay >= 0 && site.theme.overlay <= 1);
 for (const social of site.socials) assert.equal(new URL(social.url).protocol, 'https:');
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const absolute = path => new URL(path, origin).href;
+assert.match(site.analytics.measurementId, /^G-[A-Z0-9]+$/);
 const preview = process.env.VERCEL_ENV === 'preview';
 await rm('dist', {recursive:true, force:true});
 await mkdir('dist', {recursive:true});
@@ -61,6 +62,7 @@ for (const [lang, page] of Object.entries(site.pages)) {
   <meta name="twitter:title" content="${esc(page.title)}">
   <meta name="twitter:description" content="${esc(page.description)}">
   <meta name="twitter:image" content="${new URL(site.shareImage, publicOrigin).href}">
+  <meta name="vreaki-analytics" content="${preview ? '' : site.analytics.measurementId}" data-origin="${site.publicOrigin}">
   <meta name="theme-color" content="${site.theme.header}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/carrois-gothic.woff2" as="font" type="font/woff2" crossorigin>

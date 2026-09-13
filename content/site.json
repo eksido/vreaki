@@ -207,6 +207,14 @@
           "draft": "E-Mail-Vorschau",
           "subject": "Vreaki Anfrage",
           "nameRequired": "Bitte gib deinen Namen ein."
+        },
+        "analytics": {
+          "title": "Website-Statistik",
+          "text": "Mit deiner Zustimmung nutzen wir Google Analytics, um Seitenaufrufe und hilfreiche Aktionen zu messen. Google erhält dabei technische Nutzungsdaten und setzt Analyse-Cookies (bis zu 6 Monate). Namen, E-Mail-Adressen und Nachrichten aus dem Formular werden nicht übertragen. Deine Wahl gilt 6 Monate und lässt sich hier jederzeit ändern.",
+          "accept": "Statistik erlauben",
+          "decline": "Ohne Statistik",
+          "settings": "Datenschutz & Statistik",
+          "privacy": "Google-Datenschutz"
         }
       }
     },
@@ -391,6 +399,14 @@
           "draft": "Email preview",
           "subject": "Vreaki enquiry",
           "nameRequired": "Please enter your name."
+        },
+        "analytics": {
+          "title": "Website analytics",
+          "text": "With your permission, we use Google Analytics to measure page views and useful actions. Google receives technical usage data and sets analytics cookies (up to 6 months). Names, email addresses and form messages are never included. Your choice lasts 6 months and you can change it here anytime.",
+          "accept": "Allow analytics",
+          "decline": "Continue without analytics",
+          "settings": "Privacy & analytics",
+          "privacy": "Google privacy policy"
         }
       }
     }
@@ -406,5 +422,10 @@
       "/assets/poster.jpg"
     ]
   },
-  "mobileVideo": "/assets/background-mobile.mp4"
+  "mobileVideo": "/assets/background-mobile.mp4",
+  "analytics": {
+    "measurementId": "G-C4XNGFQC50",
+    "propertyId": "510036688",
+    "streamId": "15768655162"
+  }
 }

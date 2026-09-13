@@ -1,3 +1,4 @@
+import { track } from './analytics.js';
 const root = document.documentElement;
 const video = document.querySelector('.hero-video');
 const motion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -100,6 +101,7 @@ const result = form.querySelector('.enquiry-result');
 document.querySelectorAll('[data-enquiry]').forEach(link=>link.addEventListener('click',()=>{
   form.elements.package.value=link.dataset.enquiry;
   result.hidden=true;
+  track(link.closest(".price-card") ? "select_package" : "select_service",link.dataset.analyticsItem);
 }));
 form.addEventListener('input',()=>{result.hidden=true;});
 form.addEventListener('submit',event=>{
@@ -112,12 +114,17 @@ form.addEventListener('submit',event=>{
   form.querySelector('.email-preview').value=`${enquiry.subject}\n\n${enquiry.body}`;
   form.querySelector('.email-draft').href=enquiry.href;
   form.querySelector('.copy-status').textContent='';
+  track("enquiry_prepared");
   result.hidden=false;
   result.scrollIntoView({behavior:motion.matches?'instant':'smooth',block:'nearest'});
 });
 form.elements.message.addEventListener('input',()=>form.elements.message.setCustomValidity(''));
 form.elements.name.addEventListener('input',()=>form.elements.message.setCustomValidity(''));
 form.querySelector('.copy-enquiry').addEventListener('click',async()=>{
-  try {await navigator.clipboard.writeText(form.querySelector('.email-preview').value);form.querySelector('.copy-status').textContent=form.dataset.copied;}
+  try {await navigator.clipboard.writeText(form.querySelector('.email-preview').value);track('enquiry_copied');form.querySelector('.copy-status').textContent=form.dataset.copied;}
   catch {form.querySelector('.email-preview').select();form.querySelector('.copy-status').textContent=form.dataset.copyError;}
 });
+
+form.querySelector('.email-draft').addEventListener('click',()=>track('email_app_open'));
+document.querySelector('.email-link').addEventListener('click',()=>track('contact_email_click'));
+document.querySelectorAll('.footer-bottom a[target="_blank"]').forEach(link=>link.addEventListener('click',()=>track('social_click')));

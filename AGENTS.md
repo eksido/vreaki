@@ -53,3 +53,17 @@ Desktop service cards move horizontally as the user scrolls; arrow buttons and k
 ## Mobile refinements
 
 Keep primary touch targets at least 44px high, readable form input text at 16px, and service-card snap padding aligned with the visible gutter. The hero uses mobileVideo at widths up to 700px; replace both video encodes when changing source media. The hero video pauses when offscreen. On phones, motion controls belong within the hero and image-strip sections so they never cover form fields. Touch devices use native service scrolling even on larger screens. Check 320px, 375px and 430px widths in both languages, plus desktop, after layout edits.
+
+## Measurement on every prompt
+
+For every feature, content or interaction update, consider which business question useful analytics would answer. Add or update meaningful GA4 events in the same change when useful; do not wait for a separate tracking prompt. Reuse the site's shared consent-aware tracking function and stable event names. Document the trigger and safe parameters in docs/analytics.md. Do not track decorative animation, every scroll tick or every keystroke.
+
+Track real outcomes precisely: an email draft is prepared, an email app is opened, or text is copied. None proves that an enquiry was sent; never emit generate_lead or purchase for these actions. Never include names, email addresses, briefs, typed values, mailto URLs, query strings or other personal data in analytics. Use only curated service/package IDs and static interaction labels. Keep automatic form tracking disabled. Track only after analytics consent, with an equally accessible decline option and a way to change preferences. Local development and Vercel previews must not pollute production reports. Verify consent denied, consent granted, withdrawal and one event per completed action.
+
+## PageSpeed and mobile are ongoing requirements
+
+Treat mobile usability and performance as acceptance criteria for every prompt, including content, media and analytics changes. Preserve the concept and desktop layout. Check both languages at 320, 375 and 430px, keyboard/focus behavior, touch targets, form usability and horizontal overflow when affected. Use reduced-motion and data-saving fallbacks.
+
+Run npm run check, including asset budgets, before publishing. After changes to layout, media, fonts, scripts or tracking, run npm run audit against the local production build or deployed preview, compare mobile and desktop Lighthouse results, and fix material regressions. Target performance 90+, LCP <=2.5s and CLS <=0.1 in the lab; investigate real-user INP >200ms when field data is available. Report actual measurements and environment, never promise a permanent score or confuse lab measurements with field data. Do not silently relax budgets or remove checks to pass a build.
+
+Keep the poster discoverable and high priority, reserve media dimensions, lazy-load below-fold images, use local subset WOFF2 fonts, defer noncritical scripts and load analytics asynchronously only after consent. Keep responsive video encodes and avoid competing with the first meaningful paint. Do not add large libraries or third-party widgets for simple interactions. Review new assets against the budgets in scripts/performance.mjs.

@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "build": "node scripts/build.mjs && node scripts/check.mjs && node --test scripts/enquiry.test.mjs",
+    "build": "node scripts/build.mjs && node scripts/check.mjs && node --test scripts/*.test.mjs && node scripts/performance.mjs",
     "check": "npm run build",
     "dev": "node scripts/dev.mjs",
     "preview": "npx --yes vercel@59.16.0",
-    "deploy": "npm run check && npx --yes vercel@59.16.0 --prod"
+    "deploy": "npm run check && npx --yes vercel@59.16.0 --prod",
+    "audit": "node scripts/audit.mjs"
   }
 }

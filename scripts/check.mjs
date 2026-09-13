@@ -61,3 +61,13 @@ for (const asset of [site.video,site.mobileVideo,site.poster,site.shareImage,...
   await access(`dist${asset}`);
 }
 console.log('PASS: language routes, local assets, canonical URLs, hreflang, indexing rules, sitemap, structured data and AI summary are consistent.');
+
+for (const [lang,page] of Object.entries(site.pages)) {
+  const html=await readFile(`dist${page.path}index.html`,'utf8');
+  assert(html.includes('class="analytics-consent" hidden'),`${lang}: consent controls required`);
+  assert(html.includes('class="analytics-settings" hidden'),`${lang}: consent settings required`);
+  for(const text of Object.values(page.home.analytics))assert(text.trim().length>0,`${lang}: analytics labels required`);
+  const measurement=process.env.VERCEL_ENV==='preview'?'':site.analytics.measurementId;
+  assert(html.includes(`name="vreaki-analytics" content="${measurement}"`),'Preview must disable production analytics');
+  assert.equal([...html.matchAll(/data-analytics-item=/g)].length,page.home.services.length+page.home.packages.length,'Each offer needs an analytics ID');
+}
