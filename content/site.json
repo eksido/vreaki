@@ -1,0 +1,48 @@
+{
+  "name": "Vreaki",
+  "wordmark": "vreaki",
+  "canonicalOrigin": "https://vreaki.com",
+  "email": "vreaki.studio@gmail.com",
+  "location": "Barcelona",
+  "socials": [
+    {
+      "label": "INSTAGRAM",
+      "url": "https://www.instagram.com/vreaki_content"
+    },
+    {
+      "label": "LINKEDIN",
+      "url": "https://www.linkedin.com/company/vreaki-contant-lab"
+    }
+  ],
+  "video": "/assets/background.mp4",
+  "poster": "/assets/poster.jpg",
+  "shareImage": "/assets/share.jpg",
+  "theme": {
+    "header": "#245677",
+    "background": "#3f7fa9",
+    "text": "#ffffff",
+    "overlay": 0.3
+  },
+  "pages": {
+    "de": {
+      "path": "/",
+      "title": "Vreaki | KI-basiertes Content Lab in Barcelona",
+      "description": "Vreaki ist ein AI-basiertes Content Lab in Barcelona für Kampagnen, Social Content, Editorial Visuals und digitale Assets.",
+      "paragraphs": [
+        "Vreaki ist ein AI-basiertes Content Lab mit Sitz in Barcelona. Wir verbinden Ästhetik, Technologie und klare Markenvision, um Kampagnen, Social Content, Editorial Visuals und digitale Assets schnell, hochwertig und zukunftsorientiert zu produzieren.",
+        "Unsere Workflows verbinden Effizienz, Qualität und Vision. Damit schaffen wir Bildwelten, die konsistent, markentreu und sofort einsatzbereit sind. Für Anfragen zu Projekten oder Kollaborationen kontaktiere uns gerne per E-Mail."
+      ],
+      "updated": "2026-09-13"
+    },
+    "en": {
+      "path": "/en/",
+      "title": "Vreaki | AI Content Lab Barcelona",
+      "description": "Vreaki is an AI-driven content lab in Barcelona creating campaigns, social content, editorial visuals, and digital assets.",
+      "paragraphs": [
+        "VREAKI is an AI-driven content lab based in Barcelona. We merge aesthetics, technology, and clear brand vision to create campaigns, social content, editorial visuals, and digital assets that are produced quickly, with high quality, and with a forward-thinking approach.",
+        "Our workflows combine efficiency, quality, and vision. This enables us to create visual worlds that are consistent, on brand, and ready for immediate use. For project inquiries or collaborations, feel free to contact us via email."
+      ],
+      "updated": "2026-09-13"
+    }
+  }
+}
