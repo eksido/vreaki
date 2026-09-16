@@ -50,20 +50,20 @@ h1,h2,h3,p{margin:0}
 .dock-card .eyebrow{margin-bottom:14px}
 .dock-card h2{font-family:'Barlow Condensed',Carrois,Arial,sans-serif;font-size:clamp(34px,4vw,60px);line-height:.94;font-weight:800;max-width:560px;padding-right:15px;text-transform:uppercase}
 .skill-bank{display:grid;gap:2px;font-family:'Barlow Condensed',Carrois,Arial,sans-serif;font-size:clamp(31px,3.5vw,54px);line-height:.9;font-weight:800;text-transform:uppercase}
-.skill-bank span{display:block;animation:skill-pulse 4.8s ease-in-out infinite}
-.skill-bank span:nth-child(2){animation-delay:.35s}
-.skill-bank span:nth-child(3){animation-delay:.7s}
-.skill-bank span:nth-child(4){animation-delay:1.05s}
-@keyframes skill-pulse{0%,100%{opacity:.48;transform:translateX(0)}18%,42%{opacity:1;transform:translateX(8px)}}
+.skill-bank span{display:block;opacity:0;animation:skill-reveal 3.4s ease-out forwards}
+.skill-bank span:nth-child(2){animation-delay:.45s}
+.skill-bank span:nth-child(3){animation-delay:.9s}
+.skill-bank span:nth-child(4){animation-delay:1.35s}
+@keyframes skill-reveal{to{opacity:1}}
 .dock-1 .skill-bank{display:grid;align-items:center;min-height:clamp(58px,6vw,96px);margin-top:auto;margin-bottom:auto;font-size:clamp(38px,4.9vw,76px);line-height:.86;white-space:nowrap}
-.dock-1 .skill-bank span{grid-area:1/1;opacity:0;transform:translateY(12px);animation:skill-cycle 9.8s ease-in-out infinite}
+.dock-1 .skill-bank span{grid-area:1/1;opacity:0;transform:none;animation:skill-cycle 9.8s ease-in-out infinite}
 .dock-1 .skill-bank span:nth-child(2){animation-delay:1.4s}
 .dock-1 .skill-bank span:nth-child(3){animation-delay:2.8s}
 .dock-1 .skill-bank span:nth-child(4){animation-delay:4.2s}
 .dock-1 .skill-bank span:nth-child(5){animation-delay:5.6s}
 .dock-1 .skill-bank span:nth-child(6){animation-delay:7s}
 .dock-1 .skill-bank span:nth-child(7){animation-delay:8.4s}
-@keyframes skill-cycle{0%,6%{opacity:0;transform:translateY(12px)}11%,22%{opacity:1;transform:translateY(0)}27%,100%{opacity:0;transform:translateY(-12px)}}
+@keyframes skill-cycle{0%,6%{opacity:0}11%,22%{opacity:1}27%,100%{opacity:0}}
 .dock-card p{font-size:clamp(15px,1.35vw,19px);line-height:1.42;max-width:560px;margin-top:20px}
 .dock-1 p{font-size:clamp(15px,1.35vw,19px);line-height:1.42;letter-spacing:0;text-transform:none;margin-top:20px;max-width:560px}
 .campaign-marquee{overflow:hidden;padding:76px 0;background:var(--background)}
