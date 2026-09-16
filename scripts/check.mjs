@@ -56,7 +56,8 @@ for (const [lang,page] of Object.entries(site.pages)) {
 }
 assert(robots.includes(`Sitemap: ${site.canonicalOrigin}/sitemap.xml`));
 assert(robots.includes(preview ? 'Disallow: /' : 'Allow: /'));
-for (const asset of [site.video,site.mobileVideo,site.poster,site.shareImage,...site.media.gallery]) {
+const galleryAssets = site.media.gallery.map(item => typeof item === 'string' ? item : item.src);
+for (const asset of [site.video,site.mobileVideo,site.poster,site.shareImage,...galleryAssets]) {
   assert.match(asset,/^\/assets\/[a-zA-Z0-9._-]+$/);
   await access(`dist${asset}`);
 }

@@ -6,6 +6,12 @@ export function renderHome(site, page, lang, esc) {
   const motionButton = extra => `<button class="motion-toggle ${extra}" hidden data-pause="${esc(h.pause)}" data-play="${esc(h.play)}" aria-pressed="false"></button>`;
   const button = (label, href, primary = false) => `<a class="button${primary ? ' primary' : ''}" href="${href}">${esc(label)}<span aria-hidden="true">↗</span></a>`;
   const heroTitle = h.hero.title.split('\n').map(line => `<span>${esc(line)}</span>`).join('');
+  const galleryItem = item => {
+    const src = typeof item === 'string' ? item : item.src;
+    return item.type === 'video'
+      ? `<video src="${esc(src)}" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video>`
+      : `<img src="${esc(src)}" alt="" loading="lazy" width="750" height="1000">`;
+  };
   return `
   <a class="skip-link" href="#content">${lang === 'de' ? 'Zum Inhalt' : 'Skip to content'}</a>
   <header class="site-header" id="top">
@@ -37,7 +43,7 @@ export function renderHome(site, page, lang, esc) {
     </section>
     <section class="campaign-marquee" aria-label="${esc(h.galleryLabel)}">
       ${motionButton('motion-gallery')}
-      <div class="campaign-track" aria-hidden="true">${[...site.media.gallery,...site.media.gallery].map((image,i)=>`<div class="campaign-frame tint-${i%4}"><img src="${image}" alt="" loading="lazy" width="750" height="1000"><span>${esc(site.wordmark)}</span></div>`).join('')}</div>
+      <div class="campaign-track" aria-hidden="true">${[...site.media.gallery,...site.media.gallery].map((item,i)=>`<div class="campaign-frame tint-${i%4}">${galleryItem(item)}<span>${esc(site.wordmark)}</span></div>`).join('')}</div>
     </section>
     <section class="services" id="services" aria-labelledby="services-title">
       <div class="services-stage">

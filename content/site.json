@@ -60,7 +60,7 @@
           {
             "label": "Content Production",
             "title": "Von der visuellen Richtung zum fertigen Content.",
-            "description": "Stills, Motion und Kampagnen-Assets – produziert für jeden relevanten Kanal."
+            "description": "Bilder, Motion und Kampagnen-Assets – produziert für jeden relevanten Kanal."
           }
         ],
         "servicesTitle": "Eine Idee. Jedes Format.",
@@ -256,7 +256,7 @@
           {
             "label": "Content production",
             "title": "From visual direction to finished content.",
-            "description": "Stills, motion and campaign assets – produced for every relevant channel."
+            "description": "Images, motion and campaign assets – produced for every relevant channel."
           }
         ],
         "servicesTitle": "One idea. Every format.",
@@ -424,7 +424,13 @@
   "media": {
     "heroPosition": "55% 33%",
     "gallery": [
-      "/assets/poster-20260913.jpg",
+      "/assets/work-band-1.jpg",
+      "/assets/work-band-2.jpg",
+      {
+        "type": "video",
+        "src": "/assets/hot-salsa-short-card.m4v"
+      },
+      "/assets/work-band-3.jpg",
       "/assets/campaign-2.jpg",
       "/assets/campaign-3.jpg",
       "/assets/poster-20260913.jpg"
