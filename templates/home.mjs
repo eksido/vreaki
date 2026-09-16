@@ -4,7 +4,7 @@ export function renderHome(site, page, lang, esc) {
   const contact = () => '#contact';
   const formText = key => esc(h.form[key].replaceAll('{email}',site.email));
   const motionButton = extra => `<button class="motion-toggle ${extra}" hidden data-pause="${esc(h.pause)}" data-play="${esc(h.play)}" aria-pressed="false"></button>`;
-  const button = (label, href, primary = false) => `<a class="button${primary ? ' primary' : ''}" href="${href}">${esc(label)}<span aria-hidden="true">↗</span></a>`;
+  const button = (label, href, primary = false) => `<a class="button${primary ? ' primary' : ''}" href="${href}">${esc(label)}</a>`;
   const heroTitle = h.hero.title.split('\n').map(line => `<span>${esc(line)}</span>`).join('');
   const galleryItem = item => {
     const src = typeof item === 'string' ? item : item.src;
@@ -20,7 +20,7 @@ export function renderHome(site, page, lang, esc) {
       <a href="#services">${esc(h.nav.work)}</a><a href="#services">${esc(h.nav.services)}</a><a href="#about">${esc(h.nav.about)}</a><a href="#contact">${esc(h.nav.contact)}</a>
       <a class="language" href="${site.pages[other].path}" lang="${other}" hreflang="${other}" aria-label="${other === 'en' ? 'Switch to English' : 'Auf Deutsch wechseln'}">${other.toUpperCase()}</a>
     </nav>
-    <a class="header-cta" href="#contact">${esc(h.hero.primary)} <span aria-hidden="true">↗</span></a>
+    <a class="header-cta" href="#contact">${esc(h.hero.primary)}</a>
   </header>
   <main id="content">
     <section class="hero" aria-labelledby="hero-title">
@@ -35,10 +35,9 @@ export function renderHome(site, page, lang, esc) {
           <div class="actions">${button(h.hero.primary,contact(h.hero.primary),true)}${button(h.hero.secondary,'#services')}</div>
         </div>
         ${motionButton('motion-hero')}
-        <span class="scroll-cue" aria-hidden="true">↓</span>
       </div>
       <div class="hero-dock">
-        ${h.dock.map((d,i)=>`<a class="dock-card dock-${i}" href="${i ? '#packages' : '#services'}"><span class="eyebrow">${esc(d.label)}</span><h2>${esc(d.title)}</h2>${d.description ? `<p>${esc(d.description)}</p>` : ''}<span class="card-arrow" aria-hidden="true">↗</span></a>`).join('')}
+        ${h.dock.map((d,i)=>`<a class="dock-card dock-${i}" href="${i ? '#packages' : '#services'}"><span class="eyebrow">${esc(d.label)}</span>${d.skills ? `<div class="skill-bank">${d.skills.map(skill=>`<span>${esc(skill)}</span>`).join('')}</div>` : `<h2>${esc(d.title)}</h2>`}${d.description ? `<p>${esc(d.description)}</p>` : ''}</a>`).join('')}
       </div>
     </section>
     <section class="campaign-marquee" aria-label="${esc(h.galleryLabel)}">

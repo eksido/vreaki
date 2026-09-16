@@ -23,7 +23,7 @@
     "text": "#05080a",
     "overlay": 0.42,
     "blue": "#0b63d8",
-    "yellow": "#ffc423"
+    "yellow": "#ffffff"
   },
   "pages": {
     "de": {
@@ -55,12 +55,27 @@
           {
             "label": "Creative Direction",
             "title": "Von der Idee zur visuellen Richtung.",
-            "description": "Wir entwickeln Bildsprache, Kampagnenideen und Looks für deine Marke."
+            "description": "From first thought to a visual world people remember.",
+            "skills": [
+              "THE IDEA.",
+              "THE LOOK.",
+              "THE STORY.",
+              "THE WORLD."
+            ]
           },
           {
             "label": "Content Production",
             "title": "Von der visuellen Richtung zum fertigen Content.",
-            "description": "Bilder, Motion und Kampagnen-Assets – produziert für jeden relevanten Kanal."
+            "description": "NEXT-GEN CREATIVE PRODUCTION BUILT TO SCALE.",
+            "skills": [
+              "CAMPAIGNS.",
+              "HERO VISUALS.",
+              "SOCIAL CONTENT.",
+              "MOTION.",
+              "PRODUCT VISUALS.",
+              "AMAZON LISTINGS.",
+              "E-COMMERCE."
+            ]
           }
         ],
         "servicesTitle": "Eine Idee. Jedes Format.",
@@ -251,12 +266,27 @@
           {
             "label": "Creative direction",
             "title": "From idea to visual direction.",
-            "description": "We develop visual language, campaign ideas and looks for your brand."
+            "description": "From first thought to a visual world people remember.",
+            "skills": [
+              "THE IDEA.",
+              "THE LOOK.",
+              "THE STORY.",
+              "THE WORLD."
+            ]
           },
           {
             "label": "Content production",
             "title": "From visual direction to finished content.",
-            "description": "Images, motion and campaign assets – produced for every relevant channel."
+            "description": "NEXT-GEN CREATIVE PRODUCTION BUILT TO SCALE.",
+            "skills": [
+              "CAMPAIGNS.",
+              "HERO VISUALS.",
+              "SOCIAL CONTENT.",
+              "MOTION.",
+              "PRODUCT VISUALS.",
+              "AMAZON LISTINGS.",
+              "E-COMMERCE."
+            ]
           }
         ],
         "servicesTitle": "One idea. Every format.",
@@ -431,7 +461,7 @@
         "src": "/assets/hot-salsa-short-card.m4v"
       },
       "/assets/work-band-3.jpg",
-      "/assets/campaign-2.jpg",
+      "/assets/work-production.jpg",
       "/assets/campaign-3.jpg",
       "/assets/poster-20260913.jpg"
     ]
