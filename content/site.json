@@ -462,7 +462,10 @@
       },
       "/assets/work-band-3.jpg",
       "/assets/work-production.jpg",
-      "/assets/campaign-3.jpg",
+      {
+        "type": "video",
+        "src": "/assets/emotion-card.m4v"
+      },
       "/assets/poster-20260913.jpg"
     ]
   },
