@@ -42,7 +42,7 @@ export function renderHome(site, page, lang, esc) {
     </section>
     <section class="campaign-marquee" aria-label="${esc(h.galleryLabel)}">
       ${motionButton('motion-gallery')}
-      <div class="campaign-track" aria-hidden="true">${[...site.media.gallery,...site.media.gallery].map((item,i)=>`<div class="campaign-frame tint-${i%4}">${galleryItem(item)}<span>${esc(site.wordmark)}</span></div>`).join('')}</div>
+      <div class="campaign-track" aria-hidden="true">${[...site.media.gallery,...site.media.gallery].map((item,i)=>`<div class="campaign-frame frame-${i % site.media.gallery.length} tint-${i%4}">${galleryItem(item)}<span>${esc(site.wordmark)}</span></div>`).join('')}</div>
     </section>
     <section class="services" id="services" aria-labelledby="services-title">
       <div class="services-stage">

@@ -466,7 +466,10 @@
         "type": "video",
         "src": "/assets/emotion-card.m4v"
       },
-      "/assets/poster-20260913.jpg"
+      {
+        "type": "video",
+        "src": "/assets/summer-card.m4v"
+      }
     ]
   },
   "mobileVideo": "/assets/background-mobile-20260913.mp4",
