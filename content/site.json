@@ -83,76 +83,69 @@
         "serviceHint": "Scrollen und entdecken",
         "services": [
           {
-            "id": "social-content",
+            "id": "social-media",
             "label": "Social Media",
-            "title": "AI-Content für Posts, Ads und Reels.",
-            "description": "Kampagnenbilder, Reel-Cover, Werbemotive und Feed-Assets mit einem wiedererkennbaren Markenlook.",
+            "title": "Social Media\nContent, der deine Marke\nunverwechselbar macht",
+            "description": "Deine Marke. Immer wieder neu erzählt.\nMit einem Look, den man sofort deiner Marke zuordnet.",
             "tags": [
-              "Reel-Cover",
-              "Werbemotive",
-              "Feed-Sets",
-              "Story-Visuals"
-            ]
+              "Posts",
+              "Reels",
+              "Ads",
+              "Stories"
+            ],
+            "cta": "Social Content entdecken"
           },
           {
-            "id": "listing-content",
-            "label": "E-Commerce",
-            "title": "Visuals für Amazon und Produktseiten.",
-            "description": "Lifestyle-Szenen, Feature-Bilder und Produkte im Einsatz für Shops, Marktplätze und Launch-Seiten.",
+            "id": "product-content",
+            "label": "Produktseiten",
+            "title": "Produktseiten\nZeig dein Produkt.\nVerkauf seinen Wert.",
+            "description": "Produktbilder, Anwendung, Benefits und Lifestyle –\nentwickelt für Seiten, die schneller überzeugen.",
             "tags": [
-              "Hauptbild",
-              "Lifestyle",
-              "Produktvorteile",
-              "Launch-Seite"
-            ]
+              "Amazon",
+              "Shop",
+              "Website",
+              "Launch"
+            ],
+            "cta": "Produkt Content entdecken"
           },
           {
-            "id": "skincare-content",
-            "label": "Skincare und Beauty",
-            "title": "Produktwelten für Beauty-Marken.",
-            "description": "Klare Produktszenen, ausdrucksstarke Texturen, Pflege-Routinen und hochwertige Launch-Bilder für Skincare und Kosmetik.",
+            "id": "campaign-content",
+            "label": "Kampagnen",
+            "title": "Kampagnen\nEine Idee.\nEin ganzer Markenauftritt.",
+            "description": "Vom starken Key Visual bis zur kompletten Content-Serie.\nEin Kampagnenlook, der über alle Formate zusammenhält.",
             "tags": [
-              "Texturen",
-              "Pflege-Routinen",
-              "Launch-Visuals",
-              "Detailaufnahmen"
-            ]
+              "Key Visuals",
+              "Ads",
+              "Social",
+              "Launch"
+            ],
+            "cta": "Kampagnen entdecken"
           },
           {
-            "id": "fashion-content",
-            "label": "Swimwear und Fashion",
-            "title": "Kampagnenbilder für saisonale Drops.",
-            "description": "AI-Visuals mit Editorial-Look für Swimwear, Resortwear, Lookbooks, Launch-Teaser und Social-Kampagnen.",
+            "id": "places-content",
+            "label": "Hotels & Places",
+            "title": "Hotels & Places\nZeig nicht nur den Ort.\nZeig, wie er sich anfühlt.",
+            "description": "Atmosphäre, Details und Momente, die Lust darauf machen,\nanzukommen, zu bleiben – und zu buchen.",
             "tags": [
-              "Lookbook",
-              "Drop-Teaser",
-              "Editorial-Ads",
-              "Shop-Banner"
-            ]
+              "Hotels",
+              "Beach Clubs",
+              "Restaurants",
+              "Travel"
+            ],
+            "cta": "Hospitality Content entdecken"
           },
           {
-            "id": "hospitality-content",
-            "label": "Hospitality",
-            "title": "Hotels, Beachclubs und Destinationen.",
-            "description": "Atmosphärische Visuals für Eröffnungen, Events, Restaurants, Beachclubs, saisonale Angebote und Buchungskampagnen.",
+            "id": "monthly-content",
+            "label": "Content Partnership",
+            "title": "Content Partnership\nDeine Marke braucht Content.\nNicht jeden Monat ein neues Shooting.",
+            "description": "Wir entwickeln deinen visuellen Look einmal –\nund produzieren daraus laufend neuen Content für deine Marke.",
             "tags": [
-              "Eröffnung",
-              "Event-Assets",
-              "Saisonangebote",
-              "Booking-Ads"
-            ]
-          },
-          {
-            "id": "ongoing-content",
-            "label": "Laufender Content",
-            "title": "Monatlicher Content. Ein Markenlook.",
-            "description": "Für Marken, die regelmäßig neue AI-Visuals brauchen, ohne jede Woche von vorn anzufangen.",
-            "tags": [
-              "Content-Plan",
-              "Visuelles System",
-              "Monatliche Sets",
-              "Schnelle Varianten"
-            ]
+              "Social",
+              "Ads",
+              "Produkte",
+              "Varianten"
+            ],
+            "cta": "Content Plan ansehen"
           }
         ],
         "packagesTitle": "Der passende Impuls für deinen Content.",
@@ -294,76 +287,69 @@
         "serviceHint": "Scroll to explore",
         "services": [
           {
-            "id": "social-content",
-            "label": "Social media",
-            "title": "AI content for posts, ads and reels.",
-            "description": "Campaign visuals, reel covers, ad creatives and feed assets that keep one recognizable brand look.",
+            "id": "social-media",
+            "label": "Social Media",
+            "title": "Social Media\nContent that makes your brand\ninstantly recognizable.",
+            "description": "Your brand, told again and again.\nWith a look people instantly connect with your brand.",
             "tags": [
-              "Reel covers",
-              "Ad creatives",
-              "Feed sets",
-              "Story visuals"
-            ]
+              "Posts",
+              "Reels",
+              "Ads",
+              "Stories"
+            ],
+            "cta": "Explore social content"
           },
           {
-            "id": "listing-content",
-            "label": "E-commerce",
-            "title": "Amazon and product listing visuals.",
-            "description": "Lifestyle scenes, feature images and product-in-use visuals for shops, marketplaces and launch pages.",
+            "id": "product-content",
+            "label": "Product Pages",
+            "title": "Product Pages\nShow your product.\nSell its value.",
+            "description": "Product images, usage, benefits and lifestyle –\nbuilt for pages that convince faster.",
             "tags": [
-              "Main image",
-              "Lifestyle",
-              "Benefits",
-              "Launch page"
-            ]
+              "Amazon",
+              "Shop",
+              "Website",
+              "Launch"
+            ],
+            "cta": "Explore product content"
           },
           {
-            "id": "skincare-content",
-            "label": "Skincare and beauty",
-            "title": "Product worlds for beauty brands.",
-            "description": "Clean product scenes, texture-led visuals, routine moments and premium launch images for skincare and cosmetics.",
+            "id": "campaign-content",
+            "label": "Campaigns",
+            "title": "Campaigns\nOne idea.\nA full brand presence.",
+            "description": "From one strong key visual to a complete content series.\nA campaign look that holds together across every format.",
             "tags": [
-              "Texture shots",
-              "Routine scenes",
-              "Launch visuals",
-              "Detail crops"
-            ]
+              "Key Visuals",
+              "Ads",
+              "Social",
+              "Launch"
+            ],
+            "cta": "Explore campaigns"
           },
           {
-            "id": "fashion-content",
-            "label": "Swimwear and fashion",
-            "title": "Campaign imagery for seasonal drops.",
-            "description": "Editorial-looking AI visuals for swimwear, resortwear, lookbooks, launch teasers and social campaigns.",
+            "id": "places-content",
+            "label": "Hotels & Places",
+            "title": "Hotels & Places\nShow more than the place.\nShow how it feels.",
+            "description": "Atmosphere, details and moments that make people want\nto arrive, stay – and book.",
             "tags": [
-              "Lookbook",
-              "Drop teasers",
-              "Editorial ads",
-              "Shop banners"
-            ]
+              "Hotels",
+              "Beach Clubs",
+              "Restaurants",
+              "Travel"
+            ],
+            "cta": "Explore hospitality content"
           },
           {
-            "id": "hospitality-content",
-            "label": "Hospitality",
-            "title": "Hotels, beach clubs and destinations.",
-            "description": "Atmospheric visuals for openings, events, restaurants, beach clubs, seasonal offers and booking-focused campaigns.",
+            "id": "monthly-content",
+            "label": "Content Partnership",
+            "title": "Content Partnership\nYour brand needs content.\nNot a new shoot every month.",
+            "description": "We develop your visual look once –\nand keep producing fresh content from it for your brand.",
             "tags": [
-              "Opening campaign",
-              "Event assets",
-              "Season offers",
-              "Booking ads"
-            ]
-          },
-          {
-            "id": "ongoing-content",
-            "label": "Ongoing content",
-            "title": "Monthly content flow for one brand look.",
-            "description": "For brands that need a recurring stream of AI visuals without starting from zero every week.",
-            "tags": [
-              "Content plan",
-              "Visual system",
-              "Monthly sets",
-              "Fast variants"
-            ]
+              "Social",
+              "Ads",
+              "Products",
+              "Variants"
+            ],
+            "cta": "View content plan"
           }
         ],
         "packagesTitle": "Choose the content push you need.",
@@ -468,8 +454,17 @@
       },
       {
         "type": "video",
-        "src": "/assets/summer-card.m4v"
+        "src": "/assets/flower-kurz-card.m4v"
       }
+    ],
+    "galleryLabels": [
+      "FASHION",
+      "BEAUTY",
+      "CAMPAGNE",
+      "PRODUCT",
+      "HERO",
+      "MOTION",
+      "CAMPAGNE"
     ]
   },
   "mobileVideo": "/assets/background-mobile-20260913.mp4",

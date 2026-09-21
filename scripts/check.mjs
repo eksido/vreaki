@@ -6,6 +6,11 @@ const robots = await readFile('dist/robots.txt','utf8');
 const llms = await readFile('dist/llms.txt','utf8');
 const preview = process.env.VERCEL_ENV === 'preview';
 const escape = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const serviceHeadlineHtml = value => {
+  const lines = escape(value).split('\n');
+  const headline = lines.length > 1 ? lines.slice(1) : lines;
+  return headline.map((line,index)=>`<span${index === 0 ? ' class="service-title-strong"' : ''}>${line}</span>`).join('');
+};
 assert.equal(typeof site.pricingPublished,'boolean');
 assert.match(site.media.heroPosition,/^\d{1,3}% \d{1,3}%$/);
 assert.deepEqual(site.pages.de.home.services.map(s=>s.id),site.pages.en.home.services.map(s=>s.id),'Service IDs must agree between languages');
@@ -28,13 +33,13 @@ for (const [lang,page] of Object.entries(site.pages)) {
   assert.equal(webPage.dateModified,page.updated);
   assert(sitemap.includes(`<loc>${url}</loc><lastmod>${page.updated}</lastmod>`));
   assert(llms.includes(page.description));
-  assert.equal(page.home.services.length,6);
+  assert.equal(page.home.services.length,5);
   assert.equal(page.home.packages.length,3);
   for(const service of page.home.services){
     assert.match(service.id,/^[a-z][a-z-]+$/);
     for(const field of ['label','title','description'])assert(service[field]?.trim());
     assert(service.tags.length>0 && service.tags.every(t=>typeof t==='string'&&t.trim()));
-    assert(html.includes(escape(service.title)));
+    assert(html.includes(serviceHeadlineHtml(service.title)));
     if(lang==='en')assert(llms.includes(service.description));
   }
   for(const pack of page.home.packages){
