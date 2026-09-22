@@ -152,27 +152,29 @@
         "packagesDescription": "Einfache Pakete für Marken, die konsistente AI-Visuals brauchen – ohne eine komplette Produktion von Grund auf aufzubauen.",
         "packages": [
           {
-            "label": "Starter",
+            "label": "Für den Einstieg",
             "title": "Social Content Set",
             "price": 490,
-            "description": "Für ein Produkt, einen Ort oder eine Kampagnenidee mit einer ersten ausgearbeiteten visuellen Richtung.",
+            "description": "Für ein Produkt, einen Ort oder eine Idee, die einen starken visuellen Start braucht.\nEin Look. Erste Motive. Direkt einsetzbar.",
             "features": [
-              "6 AI-Bildkonzepte",
-              "1 visuelle Richtung",
-              "Feed- und Story-Zuschnitte"
+              "6 individuelle Visuals",
+              "1 visueller Look / Creative Direction",
+              "Produkt- oder Lifestyle-Szenen",
+              "Feed- & Story-Formate"
             ],
-            "cta": "Paket anfragen",
+            "cta": "Individuellen Preis anfragen",
             "featured": false
           },
           {
             "label": "Für deinen Launch",
             "title": "Campaign Content Set",
             "price": 990,
-            "description": "Für Marken, die ein stärkeres Set für Social Media, Kampagnenbilder und Produktszenen brauchen.",
+            "description": "Für Produktlaunches und Kampagnen, die mehr als einzelne Visuals brauchen.\nEin Look. Mehr Motive. Mehr Formate.",
             "features": [
-              "15 AI-Kampagnenbilder",
-              "Social- und Ad-Varianten",
-              "Produkt- oder Location-Szenen"
+              "15 individuelle Visuals",
+              "1 Kampagnen-Look / Creative Direction",
+              "Produkt- & Lifestyle-Szenen",
+              "Social-, Story- & Ad-Formate"
             ],
             "cta": "Kampagne starten",
             "featured": true
@@ -181,11 +183,13 @@
             "label": "Laufend",
             "title": "Monthly Content Flow",
             "price": 1900,
-            "description": "Für Marken, Hotels oder Beachclubs, die jeden Monat einen konsistenten visuellen Rhythmus brauchen.",
+            "priceSuffix": "/ Monat",
+            "description": "Für Marken, Hotels und Beachclubs, die kontinuierlich neuen Content brauchen – ohne jedes Mal eine neue Produktion zu starten.",
             "features": [
-              "30+ AI-Content-Assets",
-              "Monatliches Kampagnenthema",
-              "Wiederverwendbare visuelle Richtung"
+              "30+ individuelle Content Assets",
+              "Monatliche Creative Direction",
+              "Social-, Ad- & Story-Formate",
+              "Konsistenter Markenlook über alle Inhalte"
             ],
             "cta": "Monat planen",
             "featured": false
@@ -356,27 +360,29 @@
         "packagesDescription": "Simple packages for brands that need consistent AI visuals without building a full production from scratch.",
         "packages": [
           {
-            "label": "Starter",
+            "label": "For starters",
             "title": "Social Content Set",
             "price": 490,
-            "description": "For one product, place or campaign idea that needs a first polished content direction.",
+            "description": "For one product, place or idea that needs a strong visual start.\nOne look. First motifs. Ready to use.",
             "features": [
-              "6 AI visual concepts",
-              "1 visual direction",
-              "Feed and story crops"
+              "6 individual visuals",
+              "1 visual look / creative direction",
+              "Product or lifestyle scenes",
+              "Feed & story formats"
             ],
-            "cta": "Request package",
+            "cta": "Request custom price",
             "featured": false
           },
           {
             "label": "Best for launch",
             "title": "Campaign Content Set",
             "price": 990,
-            "description": "For brands that need a stronger set across social, campaign images and listing-ready scenes.",
+            "description": "For product launches and campaigns that need more than individual visuals.\nOne look. More motifs. More formats.",
             "features": [
-              "15 AI campaign visuals",
-              "Social and ad variations",
-              "Product or location scenes"
+              "15 individual visuals",
+              "1 campaign look / creative direction",
+              "Product & lifestyle scenes",
+              "Social, story & ad formats"
             ],
             "cta": "Start campaign",
             "featured": true
@@ -385,11 +391,13 @@
             "label": "Ongoing",
             "title": "Monthly Content Flow",
             "price": 1900,
-            "description": "For brands, hotels or beach clubs that need a consistent visual rhythm every month.",
+            "priceSuffix": "/ month",
+            "description": "For brands, hotels and beach clubs that need continuous new content – without starting a new production every time.",
             "features": [
-              "30+ AI content assets",
-              "Monthly campaign theme",
-              "Reusable visual direction"
+              "30+ individual content assets",
+              "Monthly creative direction",
+              "Social, ad & story formats",
+              "Consistent brand look across every asset"
             ],
             "cta": "Plan month",
             "featured": false
