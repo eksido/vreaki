@@ -2,7 +2,7 @@
   "name": "Vreaki",
   "wordmark": "vreaki",
   "canonicalOrigin": "https://vreaki.com",
-  "email": "hello@vreaki.com",
+  "email": "vreaki.studio@gmail.com",
   "location": "Barcelona",
   "socials": [
     {
@@ -34,7 +34,91 @@
         "Vreaki ist ein AI-basiertes Content Lab mit Sitz in Barcelona. Wir verbinden Ästhetik, Technologie und klare Markenvision, um Kampagnen, Social Content, Editorial Visuals und digitale Assets schnell, hochwertig und zukunftsorientiert zu produzieren.",
         "Unsere Workflows verbinden Effizienz, Qualität und Vision. Damit schaffen wir Bildwelten, die konsistent, markentreu und sofort einsatzbereit sind. Für Anfragen zu Projekten oder Kollaborationen kontaktiere uns gerne per E-Mail."
       ],
-      "updated": "2026-09-13",
+      "updated": "2026-09-23",
+      "about": {
+        "path": "/about/",
+        "title": "Über VREAKI | Creative Content Studio Barcelona",
+        "description": "VREAKI ist ein Creative Content Studio aus Barcelona für visuelle Content-Welten, Key Visuals, Produktwelten, Kampagnen und laufenden Markencontent.",
+        "studioLabel": "Über Vreaki",
+        "studioTitle": "Von unserem Studio in Barcelona aus entwickeln wir Ideen und visuelle Welten für Marken, Produkte und Orte.",
+        "paragraphs": [
+          "Dabei verbinden wir kreative Leitung mit einem klaren Gespür für Marke und Ästhetik – und der Freiheit, Ideen auf neue Weise umzusetzen."
+        ],
+        "workLabel": "Für jeden Umfang",
+        "workTitle": "Vom einzelnen Bild zur ganzen Content-Welt.",
+        "workTags": "",
+        "workNote": "Du brauchst ein Key Visual, eine neue Produktwelt oder laufenden Content für mehrere Kanäle? Wir entwickeln den Umfang passend zu deinem Projekt – als klar definiertes Paket oder individuelle Produktion.",
+        "workCta": "Pakete ansehen",
+        "workItems": [],
+        "officeLabel": "Studio und Büro",
+        "imageLabel": "Warum VREAKI",
+        "proofTitle": "Mehr Möglichkeiten.\nWeniger Grenzen.",
+        "imageText": "Orte, Sets und Bildwelten entstehen unabhängig von klassischen Produktionsbedingungen. So können wir Ideen umsetzen, die sonst aufwendige Shootings, Reisen oder große Sets erfordern würden.",
+        "proofClosing": "Vom einzelnen Key Visual bis zur kompletten Content-Serie.",
+        "quoteLabel": "Creative Direction",
+        "quote": "Die besten Ideen entstehen für mich dort, wo wir aufhören, zuerst darüber nachzudenken, was möglich ist.",
+        "quoteByline": "Annika, Gründerin & Creative Director",
+        "beliefMarquee": "MACH DEINE MARKE FÜHLBAR.",
+        "marqueeText": "CREATING VISUAL WORLDS",
+        "scrollText": "THINK BIG",
+        "contactForm": {
+          "open": "Erzähl uns von deinem Projekt",
+          "close": "Kontaktfenster schließen",
+          "greeting": "Hallo!",
+          "title": "Lass uns dich kennenlernen.",
+          "name": "Vor- und Nachname",
+          "email": "E-Mail-Adresse",
+          "phone": "Telefon (optional)",
+          "location": "Von wo schreibst du uns? (optional)",
+          "website": "Website oder Social-Media-Profil (optional)",
+          "message": "Worum geht es bei deinem Projekt?",
+          "services": "Was interessiert dich?",
+          "source": "Wie hast du uns gefunden?",
+          "sources": ["LinkedIn", "Instagram", "Empfehlung", "Sonstiges"],
+          "send": "Absenden",
+          "pending": "Vorschau: Der Formularversand ist noch nicht eingerichtet. Schreib uns bis dahin direkt per E-Mail."
+        },
+        "qaLabel": "Q&A",
+        "qaTitle": "FAQ",
+        "questions": [
+          {
+            "q": "Was für Content macht ihr?",
+            "a": "Von Produktvisuals und Social Content über Videos bis zu kompletten Kampagnen – wir decken ein breites Spektrum ab. Du hast eine besondere Idee oder brauchst etwas, das nicht in unsere Pakete passt? Schreib uns. Wir mögen kreative Herausforderungen."
+          },
+          {
+            "q": "Wie läuft ein Projekt ab?",
+            "a": "Du erzählst uns, was du vorhast, und wir starten mit Marke, Produkt und Ziel. Daraus entwickeln wir die kreative Richtung, die Bildwelt und die passenden Formate.\n\nJe nach Umfang kann ein Projekt innerhalb weniger Tage umgesetzt werden. Den genauen Zeitrahmen stimmen wir vor dem Start mit dir ab."
+          },
+          {
+            "q": "Wie lange dauert eine Produktion?",
+            "a": "Das hängt vom Umfang ab. Kleine Content Sets können schneller starten, größere Kampagnen brauchen mehr Abstimmung und Varianten."
+          },
+          {
+            "q": "Was kostet ein Projekt?",
+            "a": "**Unsere Preisgestaltung ist klar und leistungsbasiert – keine versteckten Kosten, keine Überraschungen.** Für häufige Anforderungen wie E-Commerce, Social Ads und Banner-Sets bieten wir feste Pakete an, die alle in unserer Preisübersicht aufgeführt sind. Du brauchst etwas anderes? **Erzähl uns kurz von deinem Projekt und wir erstellen dir ein individuelles Angebot. Keine versteckten Kosten.**"
+          },
+          {
+            "q": "Kann ich auch mit einem kleinen Projekt starten?",
+            "a": "Ja. Von schnell umsetzbarem Content bis zur kompletten Kampagne – immer mit dem gleichen Anspruch an Idee, Look und Qualität."
+          },
+          {
+            "q": "Könnt ihr mit meinen bestehenden Produktbildern arbeiten?",
+            "a": "Ja. Wir können dein bestehendes Produktmaterial nutzen und daraus neue Szenen, Umgebungen und Content-Varianten entwickeln – passend zu deiner Marke."
+          },
+          {
+            "q": "Arbeitet VREAKI nur in Barcelona?",
+            "a": "**Nein. VREAKI hat seinen Sitz in Barcelona, arbeitet aber mit Kunden und Marken unabhängig vom Standort.** Die meisten Projekte können vollständig remote umgesetzt werden."
+          },
+          {
+            "q": "Wie starte ich ein Projekt?",
+            "a": "Am einfachsten mit einer kurzen Anfrage: Marke, Produkt oder Ort, gewünschter Content und ungefährer Zeitrahmen."
+          }
+        ],
+        "ctaTitle": "Eine Idee reicht als Startpunkt.",
+        "ctaText": "Vreaki entwickelt daraus einen Look und Content, der zur Marke passt.",
+        "ctaPrimary": "Projekt starten",
+        "ctaSecondary": "Leistungen ansehen"
+      },
       "home": {
         "tagline": "Wir bringen Bilder in Bewegung",
         "hero": {
@@ -242,7 +326,91 @@
         "VREAKI is an AI-driven content lab based in Barcelona. We merge aesthetics, technology, and clear brand vision to create campaigns, social content, editorial visuals, and digital assets that are produced quickly, with high quality, and with a forward-thinking approach.",
         "Our workflows combine efficiency, quality, and vision. This enables us to create visual worlds that are consistent, on brand, and ready for immediate use. For project inquiries or collaborations, feel free to contact us via email."
       ],
-      "updated": "2026-09-13",
+      "updated": "2026-09-23",
+      "about": {
+        "path": "/en/about/",
+        "title": "About VREAKI | Creative Content Studio Barcelona",
+        "description": "VREAKI is a creative content studio in Barcelona creating visual content worlds, key visuals, product imagery, campaigns and ongoing brand content.",
+        "studioLabel": "About Vreaki",
+        "studioTitle": "From our studio in Barcelona, we develop ideas and visual worlds for brands, products and places.",
+        "paragraphs": [
+          "We combine creative direction with a clear sense of brand and aesthetics, and the freedom to bring ideas to life in new ways."
+        ],
+        "workLabel": "For every scope",
+        "workTitle": "From a single image to a complete content world.",
+        "workTags": "",
+        "workNote": "Need a key visual, a new product world or ongoing content for several channels? We shape the scope around your project, as a clearly defined package or a custom production.",
+        "workCta": "View packages",
+        "workItems": [],
+        "officeLabel": "Studio and office",
+        "imageLabel": "Why VREAKI",
+        "proofTitle": "More possibilities.\nFewer limits.",
+        "imageText": "Places, sets and visual worlds can be created independently of traditional production conditions. This allows us to realize ideas that would otherwise require elaborate shoots, travel or large sets.",
+        "proofClosing": "From a single key visual to a complete content series.",
+        "quoteLabel": "Creative Direction",
+        "quote": "For me, the best ideas begin when we stop asking what is possible first.",
+        "quoteByline": "Annika, Founder & Creative Director",
+        "beliefMarquee": "CREATING BRANDS PEOPLE FEEL.",
+        "marqueeText": "CREATING VISUAL WORLDS",
+        "scrollText": "THINK BIG",
+        "contactForm": {
+          "open": "Tell us about your project",
+          "close": "Close contact window",
+          "greeting": "Hello!",
+          "title": "Let's get to know you.",
+          "name": "Full name",
+          "email": "Email address",
+          "phone": "Phone (optional)",
+          "location": "Where are you writing from? (optional)",
+          "website": "Website or social media profile (optional)",
+          "message": "What is your project about?",
+          "services": "What are you interested in?",
+          "source": "How did you find us?",
+          "sources": ["LinkedIn", "Instagram", "Recommendation", "Other"],
+          "send": "Send",
+          "pending": "Preview: Form delivery is not connected yet. In the meantime, please email us directly."
+        },
+        "qaLabel": "Q&A",
+        "qaTitle": "FAQ",
+        "questions": [
+          {
+            "q": "What kind of content do you create?",
+            "a": "From product visuals and social content to videos and full campaigns, VREAKI covers a broad spectrum. If you have a special idea or need something that does not fit into the packages, write to us. We like creative challenges."
+          },
+          {
+            "q": "What does a project process look like?",
+            "a": "You tell us what you have in mind, and we start with the brand, product and goal. From there, we develop the creative direction, visual world and the right formats.\n\nDepending on the scope, a project can be completed within a few days. We agree on the exact timeline with you before the project starts."
+          },
+          {
+            "q": "How long does production take?",
+            "a": "It depends on scope. Small content sets can start faster, while larger campaigns need more alignment and variations."
+          },
+          {
+            "q": "What does a project cost?",
+            "a": "**Our pricing is clear and based on deliverables, with no hidden costs or surprises.** For common requirements such as e-commerce, social ads and banner sets, we offer fixed packages listed in our pricing overview. Need something different? **Tell us briefly about your project and we will create a tailored quote for you. No hidden costs.**"
+          },
+          {
+            "q": "Can I start with a small project?",
+            "a": "Yes. From content that can be produced quickly to a complete campaign, always with the same standard of ideas, visual direction and quality."
+          },
+          {
+            "q": "Can you work with my existing product images?",
+            "a": "Yes. We can use your existing product material to develop new scenes, environments and content variations that fit your brand."
+          },
+          {
+            "q": "Does VREAKI only work in Barcelona?",
+            "a": "**No. VREAKI is based in Barcelona but works with clients and brands regardless of location.** Most projects can be completed entirely remotely."
+          },
+          {
+            "q": "How do I start a project?",
+            "a": "The easiest way is a short enquiry: brand, product or place, desired content and rough timing."
+          }
+        ],
+        "ctaTitle": "One idea is enough to start.",
+        "ctaText": "Vreaki turns it into a look and content that fits the brand.",
+        "ctaPrimary": "Start a project",
+        "ctaSecondary": "View services"
+      },
       "home": {
         "tagline": "We make images move",
         "hero": {

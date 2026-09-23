@@ -19,6 +19,8 @@ Existing GA4 account **Vreaki (372582203)** and property **vreaki.com (510036688
 
 Events are sent directly from public/analytics.js and public/site.js. GA4 receives custom event names automatically; do not also create matching events in GA4 and double-count them. If custom parameter reporting is needed, register item_id as an event-scoped custom dimension. Email drafts and email-app clicks are intent signals, not verified leads or sales. No event here is marked as a key event automatically.
 
+The About page uses public/about.js for the same consent-aware contact_email_click and social_click events. Its new contact dialog is currently a local design preview with delivery disabled. It emits no submission, lead, field-input or dialog-preview events. The large scroll lettering is decorative and is not tracked.
+
 Enhanced measurement is disabled for the new stream, including automatic forms, outbound URLs, searches and scrolls. The custom implementation sends neither form contents nor mailto links, query strings or fragments. Advertising consent remains denied and Google signals/personalization are disabled. Referral and campaign detail is deliberately limited by URL sanitization. Do not add personal information to page titles or static event labels.
 
 ## Consent and testing

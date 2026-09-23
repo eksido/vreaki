@@ -23,7 +23,7 @@ export function renderHome(site, page, lang, esc) {
   <header class="site-header" id="top">
     <a class="brand" href="${page.path}"><span>${esc(site.wordmark)}</span><small>${esc(h.hero.label)}</small></a>
     <nav aria-label="${lang === 'de' ? 'Hauptnavigation' : 'Main navigation'}">
-      <a href="#services">${esc(h.nav.work)}</a><a href="#services">${esc(h.nav.services)}</a><a href="#about">${esc(h.nav.about)}</a><a href="#contact">${esc(h.nav.contact)}</a>
+      <a href="#services">${esc(h.nav.work)}</a><a href="#services">${esc(h.nav.services)}</a><a href="${page.about.path}">${esc(h.nav.about)}</a><a href="#contact">${esc(h.nav.contact)}</a>
       <a class="language" href="${site.pages[other].path}" lang="${other}" hreflang="${other}" aria-label="${other === 'en' ? 'Switch to English' : 'Auf Deutsch wechseln'}">${other.toUpperCase()}</a>
     </nav>
     <a class="header-cta" href="#contact">${esc(h.hero.primary)}</a>
@@ -35,7 +35,6 @@ export function renderHome(site, page, lang, esc) {
         <video class="hero-video" data-src="${site.video}" data-mobile-src="${site.mobileVideo}" poster="${site.poster}" muted loop playsinline autoplay preload="none" aria-hidden="true"></video>
         <div class="shade" aria-hidden="true"></div>
         <div class="hero-copy">
-          <p class="eyebrow">${esc(h.hero.label)}</p>
           <h1 id="hero-title">${heroTitle}</h1>
           <p class="dek">${esc(h.hero.description)}</p>
           <div class="actions">${button(h.hero.primary,contact(h.hero.primary),true)}${button(h.hero.secondary,'#services')}</div>

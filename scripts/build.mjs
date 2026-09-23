@@ -1,4 +1,5 @@
 import { renderHome } from '../templates/home.mjs';
+import { renderAbout } from '../templates/about.mjs';
 import { readFile, writeFile, mkdir, rm, cp } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 export const site = JSON.parse(await readFile('content/site.json', 'utf8'));
@@ -20,21 +21,28 @@ const preview = process.env.VERCEL_ENV === 'preview';
 await rm('dist', {recursive:true, force:true});
 await mkdir('dist', {recursive:true});
 await cp('public', 'dist', {recursive:true});
-for (const [lang, page] of Object.entries(site.pages)) {
+const localizedPages = Object.entries(site.pages).flatMap(([lang,page]) => [
+  {kind:'home', lang, page, path:page.path, title:page.title, description:page.description, updated:page.updated, render:()=>renderHome(site,page,lang,esc)},
+  {kind:'about', lang, page, path:page.about.path, title:page.about.title, description:page.about.description, updated:page.updated, render:()=>renderAbout(site,page,lang,esc)}
+]);
+const routeFor = (kind, lang) => kind === 'home' ? site.pages[lang].path : site.pages[lang].about.path;
+for (const entry of localizedPages) {
+  const {kind, lang, page, path, title, description, updated} = entry;
   assert.equal(page.path, lang === 'de' ? '/' : '/en/');
-  assert(page.title.length >= 10 && page.title.length <= 70, `${lang}: title must be 10–70 characters`);
-  assert(page.description.length >= 50 && page.description.length <= 180, `${lang}: description must be 50–180 characters`);
+  assert.equal(page.about.path, lang === 'de' ? '/about/' : '/en/about/');
+  assert(path === routeFor(kind, lang));
+  assert(title.length >= 10 && title.length <= 70, `${lang} ${kind}: title must be 10–70 characters`);
+  assert(description.length >= 50 && description.length <= 180, `${lang} ${kind}: description must be 50–180 characters`);
   assert(page.paragraphs.length >= 2 && page.paragraphs.every(p => typeof p === 'string' && p.trim().length > 20));
   assert.match(page.updated, /^\d{4}-\d{2}-\d{2}$/);
   assert.equal(new Date(page.updated).toISOString().slice(0,10), page.updated);
   assert(page.updated <= new Date().toISOString().slice(0,10), 'Do not future-date content');
-  const other = lang === 'de' ? 'en' : 'de';
-  const url = absolute(page.path);
+  const url = absolute(path);
   const graph = {
     '@context':'https://schema.org', '@graph':[
       {'@type':'Organization','@id':absolute('/#organization'),name:site.name,url:absolute('/'),email:site.email,sameAs:site.socials.map(s=>s.url),location:{'@type':'Place',name:site.location}},
       {'@type':'WebSite','@id':absolute('/#website'),url:absolute('/'),name:site.name,inLanguage:['de','en'],publisher:{'@id':absolute('/#organization')}},
-      {'@type':'WebPage','@id':`${url}#webpage`,url,name:page.title,description:page.description,inLanguage:lang,dateModified:page.updated,isPartOf:{'@id':absolute('/#website')},about:{'@id':absolute('/#organization')}}
+      {'@type':'WebPage','@id':`${url}#webpage`,url,name:title,description,inLanguage:lang,dateModified:updated,isPartOf:{'@id':absolute('/#website')},about:{'@id':absolute('/#organization')}}
     ]
   };
   const html = `<!doctype html>
@@ -42,16 +50,16 @@ for (const [lang, page] of Object.entries(site.pages)) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${esc(page.title)}</title>
-  <meta name="description" content="${esc(page.description)}">
+  <title>${esc(title)}</title>
+  <meta name="description" content="${esc(description)}">
   <meta name="robots" content="${preview ? 'noindex, follow' : 'index, follow, max-image-preview:large'}">
   <link rel="canonical" href="${url}">
-  ${Object.entries(site.pages).map(([l,p])=>`<link rel="alternate" hreflang="${l}" href="${absolute(p.path)}">`).join('\n  ')}
-  <link rel="alternate" hreflang="x-default" href="${absolute('/')}">
+  ${Object.keys(site.pages).map(l=>`<link rel="alternate" hreflang="${l}" href="${absolute(routeFor(kind,l))}">`).join('\n  ')}
+  <link rel="alternate" hreflang="x-default" href="${absolute(routeFor(kind,'de'))}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${esc(site.name)}">
-  <meta property="og:title" content="${esc(page.title)}">
-  <meta property="og:description" content="${esc(page.description)}">
+  <meta property="og:title" content="${esc(title)}">
+  <meta property="og:description" content="${esc(description)}">
   <meta property="og:url" content="${url}">
   <meta property="og:locale" content="${lang === 'de' ? 'de_DE' : 'en_GB'}">
   <meta property="og:image" content="${new URL(site.shareImage, publicOrigin).href}">
@@ -59,29 +67,49 @@ for (const [lang, page] of Object.entries(site.pages)) {
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="${esc(site.name)} – AI Content Lab Barcelona">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${esc(page.title)}">
-  <meta name="twitter:description" content="${esc(page.description)}">
+  <meta name="twitter:title" content="${esc(title)}">
+  <meta name="twitter:description" content="${esc(description)}">
   <meta name="twitter:image" content="${new URL(site.shareImage, publicOrigin).href}">
   <meta name="vreaki-analytics" content="${preview ? '' : site.analytics.measurementId}" data-origin="${site.publicOrigin}">
   <meta name="theme-color" content="${site.theme.header}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/carrois-gothic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/kaleko-105-thin.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/styles.css">
   <style>:root{--header:${site.theme.header};--background:${site.theme.background};--text:${site.theme.text};--overlay:${site.theme.overlay};--blue:${site.theme.blue};--yellow:${site.theme.yellow};--hero-position:${site.media.heroPosition};--poster-image:url('${site.poster}')}</style>
   <script type="application/ld+json">${JSON.stringify(graph).replace(/</g,'\\u003c')}</script>
-  <script type="module" src="/site.js"></script>
+  <script type="module" src="/${kind === 'about' ? 'about' : 'site'}.js"></script>
 </head>
 <body>
-  ${renderHome(site, page, lang, esc)}
+  ${entry.render()}
 </body>
 </html>\n`;
-  const dir = `dist${page.path}`;
+  const dir = `dist${path}`;
   await mkdir(dir, {recursive:true});
   await writeFile(`${dir}index.html`, html);
 }
 await writeFile('dist/robots.txt', `User-agent: *\n${preview ? 'Disallow: /' : 'Allow: /'}\n\nSitemap: ${absolute('/sitemap.xml')}\n`);
-await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${Object.values(site.pages).map(p=>`\n<url><loc>${absolute(p.path)}</loc><lastmod>${p.updated}</lastmod>${Object.entries(site.pages).map(([l,q])=>`<xhtml:link rel="alternate" hreflang="${l}" href="${absolute(q.path)}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${absolute('/')}"/></url>`).join('')}\n</urlset>\n`);
-await writeFile('dist/llms.txt', `# ${site.name}\n\n> ${site.pages.en.description}\n\n${site.pages.en.paragraphs.join('\n\n')}\n\n## Services\n${site.pages.en.home.services.map(s=>`### ${s.label}\n${s.title}\n${s.description}`).join('\n\n')}\n\n## Packages\n${site.pages.en.home.packages.map(p=>`### ${p.title}\n${p.description}\n${p.features.join('; ')}${site.pricingPublished ? `\nFrom EUR ${p.price}` : '\nRequest a quote.'}`).join('\n\n')}\n\n## Official pages\n${Object.entries(site.pages).map(([l,p])=>`- [${l.toUpperCase()}](${absolute(p.path)}): ${p.description}`).join('\n')}\n\n## Contact\n- Email: ${site.email}\n${site.socials.map(s=>`- [${s.label}](${s.url})`).join('\n')}\n`);
+await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${localizedPages.map(entry=>`\n<url><loc>${absolute(entry.path)}</loc><lastmod>${entry.updated}</lastmod>${Object.keys(site.pages).map(l=>`<xhtml:link rel="alternate" hreflang="${l}" href="${absolute(routeFor(entry.kind,l))}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${absolute(routeFor(entry.kind,'de'))}"/></url>`).join('')}\n</urlset>\n`);
+const llms = `# ${site.name}
+
+> ${site.pages.en.description}
+
+${site.pages.en.paragraphs.join('\n\n')}
+
+## Services
+${site.pages.en.home.services.map(s=>`### ${s.label}\n${s.title}\n${s.description}`).join('\n\n')}
+
+## Packages
+${site.pages.en.home.packages.map(p=>`### ${p.title}\n${p.description}\n${p.features.join('; ')}${site.pricingPublished ? `\nFrom EUR ${p.price}` : '\nRequest a quote.'}`).join('\n\n')}
+
+## Official pages
+${localizedPages.map(entry=>`- [${entry.lang.toUpperCase()} ${entry.kind}](${absolute(entry.path)}): ${entry.description}`).join('\n')}
+
+## Contact
+- Email: ${site.email}
+${site.socials.map(s=>`- [${s.label}](${s.url})`).join('\n')}
+`;
+await writeFile('dist/llms.txt', llms);
 await writeFile('dist/favicon.svg', `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="${site.theme.header}"/><text x="32" y="46" text-anchor="middle" fill="${site.theme.background}" font-family="sans-serif" font-size="48" font-weight="100">v</text></svg>`);
 await writeFile('dist/404.html', '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="robots" content="noindex"><title>Page not found | Vreaki</title><h1>Page not found</h1><p><a href="/">Vreaki — Home</a></p></html>');
 console.log('Built German and English pages, structured data, social metadata, sitemap, robots.txt and llms.txt.');
